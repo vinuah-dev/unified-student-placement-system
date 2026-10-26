@@ -1,0 +1,155 @@
+USPS PBL test run 'run2' - 26-10-2026 11:14:26
+
+TC_M1_01   PASS  Valid job posting with all criteria
+TC_M1_02   PASS  Title of 2 characters
+TC_M1_03   PASS  Title of 3 characters
+TC_M1_04   PASS  Title of 120 characters
+TC_M1_05   PASS  Title of 121 characters
+TC_M1_06   PASS  Description of 19 characters
+TC_M1_07   PASS  Package of 0 LPA
+TC_M1_08   PASS  Package just above 0
+TC_M1_09   PASS  Package of 100 LPA
+TC_M1_10   PASS  Package above 100 LPA
+TC_M1_11   PASS  Package typed as words
+TC_M1_12   PASS  Location left empty
+TC_M1_13   PASS  Deadline equal to the current time
+TC_M1_14   PASS  Deadline one minute in the future
+TC_M1_15   PASS  Deadline that is not a date
+TC_M1_16   PASS  No eligibility criterion given (UC-2 E1)
+TC_M1_17   PASS  Minimum CGPA of 10
+TC_M1_18   PASS  Minimum CGPA above 10
+TC_M1_19   PASS  Maximum backlogs of -1
+TC_M1_20   PASS  Maximum backlogs not a whole number
+TC_M1_21   PASS  Branch that does not exist
+TC_M1_22   PASS  Batch spanning 3 years
+TC_M1_23   PASS  Only one criterion (batch) given
+TC_M1_24   PASS  Student meeting every criterion of J-1
+TC_M1_25   PASS  CGPA exactly equal to the minimum
+TC_M1_26   PASS  CGPA just below the minimum
+TC_M1_27   PASS  Branch not in the allowed list
+TC_M1_28   PASS  Backlogs equal to and one above the maximum
+TC_M1_29   PASS  Several unmet criteria are all reported
+TC_M1_30   PASS  Batch does not match
+TC_M1_31   PASS  Criteria that are not set are not checked
+TC_M1_32   PASS  Approve without remarks
+TC_M1_33   PASS  Reject with 4-character remarks
+TC_M1_34   PASS  Reject with 5-character remarks
+TC_M1_35   PASS  Approve with 201-character remarks
+TC_M1_36   PASS  Unknown decision
+TC_M1_37   PASS  Deciding a job that is already published
+TC_M1_38   PASS  Recruiter of an approved company posts a job (UC-2 step 1-2)
+TC_M1_39   PASS  Recruiter of a company that is not approved
+TC_M1_40   PASS  Server validates the posting, not only the page
+TC_M1_41   PASS  Recruiter tries to approve a posting
+TC_M1_42   PASS  Officer approves J-3; eligible unplaced students notified
+TC_M1_43   PASS  Officer rejects without remarks
+TC_M1_44   PASS  Officer returns J-3 with remarks (UC-2 A1)
+TC_M1_45   PASS  Deciding a job that is already published
+TC_M1_46   PASS  Recruiter edits and resubmits the returned posting
+TC_M1_47   PASS  Another recruiter tries to edit the returned posting
+TC_M1_48   PASS  Editing a posting that was not returned
+TC_M1_49   PASS  Students see only published jobs, open ones first
+TC_M1_50   PASS  Jobs whose deadline passed are marked closed
+TC_M1_51   PASS  Keyword search ignores case and looks in the description
+TC_M1_52   PASS  Keyword search on company name
+TC_M1_53   PASS  Location filter
+TC_M1_54   PASS  Minimum package equal to a job's package
+TC_M1_55   PASS  Minimum package that is not a number
+TC_M1_56   PASS  Eligible-only filter
+TC_M1_57   PASS  Pagination of the job list
+TC_M1_58   PASS  Page number 0
+TC_M1_59   PASS  Eligibility check with reasons is recorded
+TC_M2_01   PASS  First recruiter step from Applied
+TC_M2_02   PASS  Main success path of the statechart
+TC_M2_03   PASS  Rescheduling keeps the interview state
+TC_M2_04   PASS  Reject from each state that allows it
+TC_M2_05   PASS  Offer letter before the candidate is selected
+TC_M2_06   PASS  Withdraw after the review has started
+TC_M2_07   PASS  Any step from a final state
+TC_M2_08   PASS  Tracking id format at the smallest and largest 4-digit numbers
+TC_M2_09   PASS  Eligible student applies with the active resume
+TC_M2_10   PASS  Stored status and notifications after applying
+TC_M2_11   PASS  Applying to a job that is not published
+TC_M2_12   PASS  Applying after the deadline (UC-1 E2)
+TC_M2_13   PASS  Applying one minute before the deadline
+TC_M2_14   PASS  Applying exactly at the deadline
+TC_M2_15   PASS  Already placed student applies
+TC_M2_16   PASS  Ineligible student applies (UC-1 E1)
+TC_M2_17   PASS  Second application to the same job (UC-1 E3)
+TC_M2_18   PASS  Inactive resume selected
+TC_M2_19   PASS  Another student's resume selected
+TC_M2_20   PASS  No resume selected
+TC_M2_21   PASS  Cover note of 500 characters
+TC_M2_22   PASS  Cover note of 501 characters
+TC_M2_23   PASS  Rejected submissions leave no record (UC-1 postcondition)
+TC_M2_24   PASS  Recruiter moves the application to review
+TC_M2_25   PASS  Status change is stored in the history and the student is notified
+TC_M2_26   PASS  Offer letter straight from Applied
+TC_M2_27   PASS  Recruiter of another company changes the application
+TC_M2_28   PASS  Placement officer changes the application
+TC_M2_29   PASS  Recruiter sees only applicants of own jobs
+TC_M2_30   PASS  Student tries a recruiter step on own application
+TC_M2_31   PASS  Recruiter tries to accept the offer for the student
+TC_M2_32   PASS  Event name that does not exist
+TC_M2_33   PASS  Student withdraws before the deadline
+TC_M2_34   PASS  Another student tries to withdraw it
+TC_M2_35   PASS  Withdraw after the review has started
+TC_M2_36   PASS  Withdraw after the deadline
+TC_M2_37   PASS  Applying again after withdrawing (UC-1 E3)
+TC_M2_38   PASS  Student accepts the offer and becomes placed
+TC_M2_39   PASS  Accepting a second offer
+TC_M2_40   PASS  Student declines the offer
+TC_M2_41   PASS  Timeline holds every step with its actor
+TC_M2_42   PASS  Notifications and applications are listed newest first
+TC_INT_01  PASS  Complete placement flow across both modules
+TC_INT_02  PASS  Returned posting is fixed, resubmitted and published (UC-2 A1)
+TC_INT_03  PASS  Rejected posting is never visible or open (UC-2 E2)
+TC_INT_04  PASS  Database error while saving rolls everything back
+TC_INT_05  PASS  Crossing the deadline closes the job for apply and withdraw
+TC_INT_06  PASS  Eligibility on the job board matches the apply check (BR-03)
+TC_INT_07  PASS  Five simultaneous identical applications
+TC_INT_08  PASS  Data is kept after a server restart and not re-seeded
+TC_INT_09  PASS  Data version that open pages poll for live updates (FR-2.12)
+TC_UI_01   PASS  Student profile used for the eligibility check
+TC_UI_02   PASS  Job board lists published jobs, open first, with eligibility
+TC_UI_03   PASS  Ineligible job shows the unmet criteria and Apply is disabled
+TC_UI_04   PASS  Keyword search ignores case
+TC_UI_05   PASS  Minimum package that is not a number
+TC_UI_06   PASS  'Eligible only' filter
+TC_UI_07   PASS  Active resume is pre-selected, inactive one is labelled
+TC_UI_08   PASS  Choosing a job the student is not eligible for
+TC_UI_09   PASS  Choosing a job whose deadline has passed
+TC_UI_10   PASS  Apply button on the board opens the job in the apply form
+TC_UI_11   PASS  Eligible student submits an application
+TC_UI_12   PASS  Application appears in My applications with its timeline
+TC_UI_13   PASS  Confirmation notification shown to the student
+TC_UI_14   PASS  Applying to the same job again
+TC_UI_15   PASS  Cover note of 501 characters
+TC_UI_16   PASS  Inactive resume chosen
+TC_UI_17   PASS  Withdraw asks for confirmation; cancelling keeps the application
+TC_UI_18   PASS  Recruiter of another company does not see the applicant
+TC_UI_19   PASS  Next steps offered for an Applied application follow the statechart
+TC_UI_20   PASS  Update without choosing a next step
+TC_UI_21   PASS  Recruiter moves the application to review
+TC_UI_22   PASS  Student timeline after the review started
+TC_UI_23   PASS  Job form submitted empty
+TC_UI_24   PASS  Deadline in the past
+TC_UI_25   PASS  No eligibility criterion given
+TC_UI_26   PASS  Recruiter posts a valid job
+TC_UI_27   PASS  Recruiter of an unapproved company
+TC_UI_28   PASS  Officer sees the pending postings
+TC_UI_29   PASS  Decision not chosen
+TC_UI_30   PASS  Reject without remarks (after confirming)
+TC_UI_31   PASS  Officer returns a posting with remarks
+TC_UI_32   PASS  Recruiter edits and resubmits the returned posting
+TC_UI_33   PASS  Officer approves J-5; eligible students are notified
+TC_UI_34   PASS  Approved job reaches an eligible student
+TC_UI_35   PASS  Recruiter takes the application to Offer Issued
+TC_UI_36   PASS  Student accepts the offer and becomes placed
+TC_UI_37   PASS  Placed student applies to another job
+TC_UI_38   PASS  Timeline after acceptance
+TC_UI_39   PASS  Job posted by a recruiter elsewhere appears on the officer's open page
+TC_UI_40   PASS  Job approved elsewhere appears on the student's open job board
+TC_UI_41   PASS  Page fits a phone screen
+
+151 test cases executed, 151 passed, 0 failed (118.5 s)

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI test case evidence</title>
+<style>
+  html, body { margin: 0; height: 100%; font-family: "Segoe UI", Arial, sans-serif; }
+  #bar { height: 34px; padding: 0 14px; display: flex; align-items: center; gap: 18px; background: #26303f; color: #fff; font-size: 13px; white-space: nowrap; overflow: hidden; }
+  #bar b.PASS { color: #7fe0a0; }
+  #bar b.FAIL { color: #ff9a9a; }
+  iframe { display: block; height: calc(100% - 34px); border: 0; }
+</style>
+</head>
+<body>
+<div id="bar">Loading…</div>
+<iframe id="frame" title="Page under test"></iframe>
+<script src="harness.js"></script>
+<script src="ui_cases.js"></script>
+<script>
+// Usage: show.html?tc=TC_UI_14[&scroll=elementId]
+// UI cases build on each other, so every earlier case is replayed first; the page is then left in the state
+// of the chosen case for the screenshot.
+(async function () {
+  const params = new URLSearchParams(location.search);
+  const frame = document.getElementById("frame");
+  const bar = document.getElementById("bar");
+  const index = UI_CASES.findIndex((c) => c.id === params.get("tc"));
+  for (const tc of UI_CASES.slice(0, index)) {
+    try { const d = await openPage(frame, tc); await tc.run(d, frame.contentWindow); } catch (e) { /* replay only */ }
+  }
+  const tc = UI_CASES[index];
+  const doc = await openPage(frame, tc);
+  if (!tc.width) frame.style.width = "100%";
+  let actual;
+  try { actual = await tc.run(doc, frame.contentWindow); } catch (e) { actual = "ERROR: " + e.message; }
+  const status = actual === tc.expected ? "PASS" : "FAIL";
+  if (params.get("scroll")) doc.getElementById(params.get("scroll")).scrollIntoView({ block: "start" });
+  bar.innerHTML = "";
+  [["Test case", tc.id], ["Executed", new Date().toLocaleString("en-IN")], ["Actual", actual], ["Status", status]].forEach((p) => {
+    const span = document.createElement("span");
+    span.textContent = p[0] + ": ";
+    const b = document.createElement("b");
+    b.textContent = p[1];
+    if (p[0] === "Status") b.className = status;
+    span.appendChild(b);
+    bar.appendChild(span);
+  });
+  document.title = "DONE";
+})();
+</script>
+</body>
+</html>

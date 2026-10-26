@@ -1,0 +1,92 @@
+PBL test run 'run1-initial' - 25-10-2026 20:00:53
+
+TC_M1_01   PASS  Valid frame from camera and sensors
+TC_M1_02   PASS  Only 3 region temperatures sent
+TC_M1_03   PASS  Region temperature at DHT11 upper limit
+TC_M1_04   PASS  Region temperature above DHT11 range
+TC_M1_05   PASS  Region temperature at DHT11 lower limit
+TC_M1_06   PASS  Region temperature below DHT11 range
+TC_M1_07   PASS  Negative people count
+TC_M1_08   PASS  People count sent as text
+TC_M1_09   PASS  Fractional fan count
+TC_M1_10   PASS  Frame with the same timestamp as the previous frame
+TC_M1_11   PASS  4 consecutive empty frames
+TC_M1_12   PASS  5 consecutive empty frames confirm vacancy
+TC_M1_13   PASS  Person re-enters after 4 empty frames
+TC_M1_14   PASS  Fans left ON after everyone leaves
+TC_M1_15   PASS  Lights left ON after everyone leaves
+TC_M1_16   PASS  Fans and lights switched off when leaving
+TC_M1_17   PASS  Fans and lights ON while room is occupied
+TC_M1_18   PASS  Fan switched OFF and ON again during vacancy
+TC_M1_19   PASS  Mean temperature drop exactly 0.5 deg C
+TC_M1_20   PASS  Mean temperature drop 0.49 deg C
+TC_M1_21   FAIL  Mean temperature drop 0.499 deg C
+           expected: state=VACANT, ac_inferred_on=False, alerts=[]
+           actual  : state=VACANT, ac_inferred_on=True, alerts=[AC_ON_VACANT]
+TC_M1_22   PASS  Different drop in each region (mean above threshold)
+TC_M1_23   PASS  Room warms up after vacancy (AC off)
+TC_M1_24   PASS  Final reading 59 s after vacancy confirmed
+TC_M1_25   PASS  Final reading exactly 60 s after vacancy confirmed
+TC_M1_26   PASS  Person enters during the AC check
+TC_M1_27   PASS  vacancy_frames = 0
+TC_M1_28   PASS  vacancy_frames = 1 and 300
+TC_M1_29   PASS  vacancy_frames = 301
+TC_M1_30   PASS  wait_seconds = 29 and 601
+TC_M1_31   PASS  delta_t_threshold = 0.09 and 5.1
+TC_M1_32   PASS  Non-numeric and fractional settings
+TC_M2_01   PASS  List monitored rooms
+TC_M2_02   PASS  Post a valid reading
+TC_M2_03   PASS  Reading for a room that does not exist
+TC_M2_04   FAIL  Reading without room_id
+           expected: 400: room_id is required.
+           actual  : 404: Room None not found.
+TC_M2_05   PASS  Body is not valid JSON
+TC_M2_06   PASS  Region 3 temperature 50.5 deg C
+TC_M2_07   PASS  Acknowledge an open alert
+TC_M2_08   PASS  Acknowledge the same alert twice
+TC_M2_09   PASS  Acknowledge an alert that does not exist
+TC_M2_10   PASS  Operator name of 2 characters
+TC_M2_11   PASS  Operator name of 3 characters
+TC_M2_12   PASS  Remarks of 201 characters
+TC_M2_13   PASS  Remarks of 200 characters
+TC_M2_14   PASS  Manual override: switch fans OFF
+TC_M2_15   PASS  Override for an unsupported appliance
+TC_M2_16   PASS  Action in lower case
+TC_M2_17   PASS  Reason of 4 characters
+TC_M2_18   PASS  Reason of 5 characters
+TC_M2_19   PASS  Reason of 100 characters
+TC_M2_20   PASS  Reason of 101 characters
+TC_M2_21   PASS  ESP32 marks a command as done
+TC_M2_22   PASS  Command marked done twice
+TC_M2_23   PASS  Save valid detection settings
+TC_M2_24   PASS  Settings kept after server restart
+TC_INT_01  PASS  Engine alerts are stored and listed
+TC_INT_02  PASS  Room status combines engine and database
+TC_INT_03  PASS  Acknowledging an alert updates the room
+TC_INT_04  PASS  Override reaches the ESP32 and stops alerts
+TC_INT_05  PASS  New settings apply to the running engine
+TC_INT_06  PASS  Every reading is stored
+TC_INT_07  PASS  Simulator scenario ac_left_on
+TC_UI_01   FAIL  Room that has sent no readings yet
+           expected: NO DATA
+           actual  : OCCUPIED
+TC_UI_02   PASS  Status card after the room becomes vacant
+TC_UI_03   PASS  Heatmap shows the four region temperatures
+TC_UI_04   PASS  Open alerts table
+TC_UI_05   PASS  Acknowledge without selecting an alert
+TC_UI_06   PASS  Operator name of 1 character
+TC_UI_07   PASS  Acknowledge alert #1
+TC_UI_08   PASS  Acknowledged alert leaves the open list
+TC_UI_09   PASS  Send manual override fan OFF
+TC_UI_10   PASS  Override without choosing an appliance
+TC_UI_11   PASS  Override without choosing ON or OFF
+TC_UI_12   PASS  Override reason of 3 characters
+TC_UI_13   PASS  Save valid settings
+TC_UI_14   FAIL  Empty frames = 301
+           expected: Empty frames to confirm vacancy must be between 1 and 300.
+           actual  : vacancy_frames must be between 1 and 300.
+TC_UI_15   FAIL  Threshold is not a number
+           expected: Mean ΔT threshold must be a number.
+           actual  : delta_t_threshold must be a number.
+
+78 test cases executed, 73 passed, 5 failed (23.9 s)

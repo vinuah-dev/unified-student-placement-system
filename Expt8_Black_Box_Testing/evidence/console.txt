@@ -1,0 +1,60 @@
+Expt-8 black box test run - 26-10-2026 12:54:48
+
+TC_PJ_01  PASS  All fields valid
+TC_PJ_02  PASS  Job title of 2 characters
+TC_PJ_03  PASS  Job title of 3 characters
+TC_PJ_04  PASS  Job title of 120 characters
+TC_PJ_05  PASS  Job title of 121 characters
+TC_PJ_06  PASS  Description of 19 characters
+TC_PJ_07  PASS  Description of 20 characters
+TC_PJ_08  PASS  Package of 0 LPA
+TC_PJ_09  PASS  Package just above 0
+TC_PJ_10  PASS  Package of 100 LPA
+TC_PJ_11  PASS  Package above 100 LPA
+TC_PJ_12  PASS  Package typed in words
+TC_PJ_13  PASS  Location left blank
+TC_PJ_14  PASS  Deadline equal to the current date and time
+TC_PJ_15  PASS  Deadline one minute in the future
+TC_PJ_16  PASS  Deadline not entered
+TC_PJ_17  PASS  Minimum CGPA above 10
+TC_PJ_18  PASS  Maximum backlogs above 10
+TC_PJ_19  PASS  Batch that does not span 4 years
+TC_PJ_20  PASS  No eligibility criterion given
+TC_PJ_21  PASS  Recruiter of a company not approved by the placement cell
+TC_JD_01  PASS  Approve the pending posting without remarks
+TC_JD_02  PASS  Reject with remarks
+TC_JD_03  PASS  Return for changes with remarks
+TC_JD_04  PASS  No job selected
+TC_JD_05  PASS  No decision selected
+TC_JD_06  PASS  Reject without remarks
+TC_JD_07  PASS  Reject with remarks of 4 characters
+TC_JD_08  PASS  Reject with remarks of 5 characters
+TC_JD_09  PASS  Return with remarks of 200 characters
+TC_JD_10  PASS  Return with remarks of 201 characters
+TC_JD_11  PASS  Approve with remarks of 200 characters
+TC_JD_12  PASS  Approve with remarks of 201 characters
+TC_AJ_01  PASS  Eligible student applies with the pre-selected active resume
+TC_AJ_02  PASS  Cover note left blank (optional)
+TC_AJ_03  PASS  No job selected
+TC_AJ_04  PASS  Student not eligible for the job
+TC_AJ_05  PASS  Job whose deadline has passed
+TC_AJ_06  PASS  Student who is already placed
+TC_AJ_07  PASS  Inactive resume selected
+TC_AJ_08  PASS  No resume selected
+TC_AJ_09  PASS  Cover note of 500 characters
+TC_AJ_10  PASS  Cover note of 501 characters
+TC_AJ_11  PASS  Applying to the same job a second time
+TC_JS_01  PASS  No filter: all published jobs, open ones first
+TC_JS_02  PASS  Keyword in the job title
+TC_JS_03  PASS  Keyword in the company name, upper case
+TC_JS_04  PASS  Keyword that matches no job
+TC_JS_05  PASS  Location filter
+TC_JS_06  PASS  Minimum package equal to a job's package (6 LPA)
+TC_JS_07  PASS  Minimum package just above 6 LPA
+TC_JS_08  PASS  Minimum package above the highest package (8.5 LPA)
+TC_JS_09  PASS  Minimum package typed in words
+TC_JS_10  PASS  Eligible only - ECE student
+TC_JS_11  PASS  Eligible only - student eligible for no job
+TC_JS_12  PASS  Keyword and location together
+
+56 test cases executed, 56 passed, 0 failed

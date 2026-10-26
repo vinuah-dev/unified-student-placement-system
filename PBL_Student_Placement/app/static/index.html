@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unified Student Placement System</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Unified Student Placement System</h1>
+    <p>Module 1: Job Posting &amp; Eligibility Verification · Module 2: Job Application &amp; Tracking</p>
+  </div>
+  <div class="acting">
+    <label>Acting as
+      <select id="role" aria-label="Role">
+        <option value="student">Student</option>
+        <option value="recruiter">Recruiter</option>
+        <option value="officer">Placement Officer</option>
+      </select>
+    </label>
+    <select id="actor" aria-label="User"></select>
+    <span class="live" title="The page updates by itself when anyone changes data"><span id="liveDot"></span><span id="liveText">Connecting…</span></span>
+  </div>
+</header>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<main>
+  <!-- ============ Student ============ -->
+  <section class="card" id="profileCard" data-role="student">
+    <h2>My profile</h2>
+    <p class="who"><strong id="pfName">-</strong> <span id="pfPlaced" class="badge">-</span></p>
+    <dl class="facts">
+      <div><dt>Roll No.</dt><dd id="pfRoll">-</dd></div>
+      <div><dt>Branch</dt><dd id="pfBranch">-</dd></div>
+      <div><dt>Batch</dt><dd id="pfBatch">-</dd></div>
+      <div><dt>CGPA</dt><dd id="pfCgpa">-</dd></div>
+      <div><dt>Backlogs</dt><dd id="pfBacklogs">-</dd></div>
+    </dl>
+  </section>
+
+  <section class="card" id="applyCard" data-role="student">
+    <h2>Apply for a job</h2>
+    <form id="applyForm" novalidate>
+      <label>Job<select id="apJob"><option value="">-- Select a job --</option></select></label>
+      <div id="apElig" class="elig-preview" role="status"></div>
+      <label>Resume<select id="apResume"><option value="">-- Select a resume --</option></select></label>
+      <label>Cover note (optional)<textarea id="apNote" rows="3" placeholder="Why are you a good fit? (max 500 characters)"></textarea>
+        <small id="apCount">0 / 500</small></label>
+      <button type="submit" id="apSubmit">Submit application</button>
+      <div id="apResult" class="result" role="status"></div>
+    </form>
+  </section>
+
+  <section class="card wide" id="jobsCard" data-role="student">
+    <h2>Job board <span id="jobCount" class="muted small"></span></h2>
+    <form id="searchForm" class="filters" novalidate>
+      <label>Keyword<input id="fKeyword" type="text" placeholder="title, company or skill"></label>
+      <label>Location<input id="fLocation" type="text" placeholder="e.g. Pune"></label>
+      <label>Min package (LPA)<input id="fMinCtc" type="text" inputmode="decimal" placeholder="e.g. 5"></label>
+      <label class="check"><input id="fEligible" type="checkbox"> Eligible only</label>
+      <button type="submit">Search</button>
+    </form>
+    <div id="searchResult" class="result" role="status"></div>
+    <table>
+      <thead><tr><th>Job</th><th>Company</th><th>Package</th><th>Location</th><th>Deadline</th><th>Eligibility</th><th></th></tr></thead>
+      <tbody id="jobRows"></tbody>
+    </table>
+    <div class="pager">
+      <button type="button" id="pgPrev" class="secondary">Previous</button>
+      <span id="pgInfo"></span>
+      <button type="button" id="pgNext" class="secondary">Next</button>
+    </div>
+  </section>
+
+  <section class="card wide" id="myAppsCard" data-role="student">
+    <h2>My applications</h2>
+    <table>
+      <thead><tr><th>Tracking ID</th><th>Job</th><th>Company</th><th>Applied on</th><th>Status</th><th></th></tr></thead>
+      <tbody id="myAppRows"></tbody>
+    </table>
+    <div id="appResult" class="result" role="status"></div>
+    <div id="timelineBox" hidden>
+      <h3>Status timeline: <span id="tlTracking"></span></h3>
+      <ol id="stepper" class="stepper"></ol>
+      <ul id="historyList" class="history"></ul>
+    </div>
+  </section>
+
+  <!-- ============ Recruiter ============ -->
+  <section class="card" id="postCard" data-role="recruiter">
+    <h2>Post a job</h2>
+    <p id="companyNote" class="note" hidden></p>
+    <form id="jobForm" novalidate>
+      <label>Job title<input id="jbTitle" type="text" placeholder="3 to 120 characters"></label>
+      <label>Description<textarea id="jbDescription" rows="3" placeholder="Role and responsibilities, 20 to 2000 characters"></textarea></label>
+      <div class="row2">
+        <label>Package (LPA)<input id="jbCtc" type="text" inputmode="decimal" placeholder="e.g. 8.5"></label>
+        <label>Location<input id="jbLocation" type="text" placeholder="e.g. Pune"></label>
+      </div>
+      <label>Application deadline<input id="jbDeadline" type="datetime-local"></label>
+      <fieldset>
+        <legend>Eligibility criteria (at least one)</legend>
+        <div class="row2">
+          <label>Minimum CGPA<input id="jbMinCgpa" type="text" inputmode="decimal" placeholder="0 to 10"></label>
+          <label>Maximum active backlogs<input id="jbMaxBacklogs" type="text" inputmode="numeric" placeholder="0 to 10"></label>
+        </div>
+        <div class="branches" id="jbBranches" role="group" aria-label="Allowed branches"></div>
+        <label>Batch<input id="jbBatch" type="text" placeholder="e.g. 2023-2027"></label>
+      </fieldset>
+      <button type="submit" id="jbSubmit">Submit for approval</button>
+      <button type="button" id="jbCancel" class="secondary" hidden>Cancel editing</button>
+      <div id="jbResult" class="result" role="status"></div>
+    </form>
+  </section>
+
+  <section class="card" id="myJobsCard" data-role="recruiter">
+    <h2>My job postings</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Title</th><th>Status</th><th>Deadline</th><th>Remarks</th><th></th></tr></thead>
+      <tbody id="myJobRows"></tbody>
+    </table>
+  </section>
+
+  <!-- ============ Placement officer ============ -->
+  <section class="card wide" id="approvalCard" data-role="officer">
+    <h2>Pending job approvals</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Company</th><th>Title</th><th>Package</th><th>Deadline</th><th>Eligibility criteria</th></tr></thead>
+      <tbody id="pendingRows"></tbody>
+    </table>
+    <form id="decisionForm" novalidate>
+      <h3>Record decision</h3>
+      <div class="row3">
+        <label>Job<select id="dcJob"><option value="">-- Select --</option></select></label>
+        <div class="radios" role="radiogroup" aria-label="Decision">
+          <label><input type="radio" name="dcDecision" value="approve"> Approve</label>
+          <label><input type="radio" name="dcDecision" value="reject"> Reject</label>
+          <label><input type="radio" name="dcDecision" value="return"> Return for changes</label>
+        </div>
+        <label>Remarks<input id="dcRemarks" type="text" placeholder="required to reject or return (5 to 200)"></label>
+      </div>
+      <button type="submit">Record decision</button>
+      <div id="dcResult" class="result" role="status"></div>
+    </form>
+  </section>
+
+  <section class="card wide" id="allJobsCard" data-role="officer">
+    <h2>All job postings</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Company</th><th>Title</th><th>Status</th><th>Deadline</th><th>Remarks</th></tr></thead>
+      <tbody id="allJobRows"></tbody>
+    </table>
+  </section>
+
+  <!-- ============ Recruiter and officer ============ -->
+  <section class="card wide" id="applicantsCard" data-role="recruiter officer">
+    <h2 id="applicantsTitle">Applicants</h2>
+    <table>
+      <thead><tr><th>Tracking ID</th><th>Student</th><th>Roll No.</th><th>Job</th><th>Resume</th><th>Status</th><th>Next step</th></tr></thead>
+      <tbody id="applicantRows"></tbody>
+    </table>
+    <div id="stResult" class="result" role="status"></div>
+  </section>
+
+  <section class="card wide" id="notifCard" data-role="student recruiter officer">
+    <h2>Notifications <span id="notifCount" class="muted small"></span></h2>
+    <ul id="notifList" class="notifs"></ul>
+  </section>
+</main>
+<footer>SE PBL prototype · Unified Student Placement System (USPS) · demo data only</footer>
+<script src="/app.js"></script>
+</body>
+</html>

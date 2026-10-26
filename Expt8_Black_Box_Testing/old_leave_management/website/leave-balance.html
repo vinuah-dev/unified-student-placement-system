@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leave Balance · Online Leave Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Online Leave Management System</h1>
+  <p>Faculty leave portal · Software Engineering Lab demo</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="apply-leave.html">Apply for Leave</a>
+  <a href="profile.html">Update Profile</a>
+  <a href="approve-leave.html">Approve / Reject</a>
+  <a href="leave-balance.html" class="active">Leave Balance</a>
+</nav>
+<main>
+  <section class="card">
+    <h2>Form 4 · Leave Balance Enquiry</h2>
+    <p class="sub">View available and total leave for a faculty member in an academic year.</p>
+    <form id="balanceForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="facultyId">Faculty ID *</label>
+          <input type="text" id="facultyId" placeholder="e.g. FAC101">
+          <div class="hint">FAC followed by 3 digits</div>
+        </div>
+        <div class="field">
+          <label for="academicYear">Academic year *</label>
+          <select id="academicYear">
+            <option value="">-- Select --</option>
+            <option value="2026-27">2026-27</option>
+            <option value="2025-26">2025-26</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="leaveType">Leave type</label>
+        <select id="leaveType">
+          <option value="ALL">All leave types</option>
+          <option value="CL">Casual Leave (CL)</option>
+          <option value="ML">Medical Leave (ML)</option>
+          <option value="OD">On-Duty Leave (OD)</option>
+        </select>
+      </div>
+      <button type="submit">Show balance</button><button type="reset" class="secondary">Clear</button>
+      <div id="result" class="result" role="status"></div>
+    </form>
+    <table id="balanceTable" hidden>
+      <thead><tr><th>Leave type</th><th>Total</th><th>Used</th><th>Available</th></tr></thead>
+      <tbody id="balanceRows"></tbody>
+    </table>
+  </section>
+</main>
+<footer>Demo data is reset on every page load.</footer>
+<script src="js/common.js"></script>
+<script src="js/leave-balance.js"></script>
+</body>
+</html>

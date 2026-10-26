@@ -1,0 +1,164 @@
+Issue Id,Parent,Issue Type,Summary,Description,Labels,Story point estimate,Sprint
+1,,Epic,Module 1: Vacancy and AC-State Detection Engine,"Edge decision engine: validates camera/sensor frames, confirms vacancy over consecutive frames, raises fan/light wastage alerts and infers the AC state from the 4-region temperature drop (FR-1.1 to FR-1.8).
+
+Priority: High",module-1 priority-high,,
+2,,Epic,Module 2: Monitoring Dashboard and Control,"REST API + SQLite database + web dashboard: room status and heatmap, alert acknowledgement, manual ESP32 relay override and detection settings (FR-2.1 to FR-2.7).
+
+Priority: High",module-2 priority-high,,
+3,,Epic,Testing and Quality Assurance,"Test case design (EP, BVA, validation), unit, integration and UI test automation, test execution, bug tracking and retesting.
+
+Priority: High",testing priority-high,,
+4,,Epic,Project Setup and Documentation,"Requirements, project structure, simulator for the hardware, report and presentation.
+
+Priority: High",docs priority-high,,
+5,4,Task,Write requirements for the two modules,"Derive FR-1.x and FR-2.x from the Idea Lab problem statement and record them in docs/requirements.md.
+
+Priority: High",docs priority-high,2,SCEM Sprint 1
+6,4,Task,"Set up project structure (app/, tests/, docs/)","Python 3.11 standard library only: http.server, sqlite3, unittest.
+
+Priority: Medium",docs priority-medium,1,SCEM Sprint 1
+7,1,Story,Confirm vacancy over consecutive empty frames,"As a facility manager I want a room to be marked vacant only after N consecutive frames without people, so that short absences do not raise alerts.
+Acceptance: FR-1.3, FR-1.4; settings limit FR-1.8.
+
+Priority: High",module-1 priority-high,3,SCEM Sprint 1
+8,1,Story,Alert when fans or lights are left ON in a vacant room,"As a facility manager I want an alert when a fan or light stays ON after everyone leaves.
+Acceptance: FR-1.5 (once per occurrence, again if switched off and on).
+
+Priority: High",module-1 priority-high,3,SCEM Sprint 1
+9,1,Story,Infer AC state from the 4-region temperature drop,"As a facility manager I want to know if the AC is still running in a vacant room without a power meter.
+Acceptance: FR-1.6 (mean drop >= threshold after wait_seconds), FR-1.7 (cancel if someone enters).
+
+Priority: Highest",module-1 priority-highest,5,SCEM Sprint 1
+10,1,Story,Validate camera and sensor frames,"As the system I want invalid frames rejected with a clear message.
+Acceptance: FR-1.1, FR-1.2.
+
+Priority: Medium",module-1 priority-medium,2,SCEM Sprint 1
+11,4,Task,"Build simulator for camera, DHT11 sensors and ESP32","app/simulator.py: scenarios ac_left_on, all_off, occupied; executes pending relay commands like the ESP32.
+
+Priority: Medium",docs priority-medium,3,SCEM Sprint 2
+12,2,Story,Receive readings through a REST API and store them,"As the sensor node I want to post readings to /api/readings so that they are processed and stored.
+Acceptance: FR-2.1.
+
+Priority: High",module-2 priority-high,3,SCEM Sprint 2
+13,2,Story,Show room status and region heatmap on the dashboard,"As an operator I want to see the state, counts, AC check and a 2x2 temperature heatmap of a room.
+Acceptance: FR-2.2.
+
+Priority: High",module-2 priority-high,5,SCEM Sprint 2
+14,2,Story,List and acknowledge open alerts,"As an operator I want to acknowledge alerts with my name and remarks.
+Acceptance: FR-2.3.
+
+Priority: High",module-2 priority-high,3,SCEM Sprint 2
+15,2,Story,Manual fan/light override through the ESP32,"As an operator I want to switch fans or lights ON/OFF from the dashboard.
+Acceptance: FR-2.4, FR-2.5.
+
+Priority: High",module-2 priority-high,5,SCEM Sprint 2
+16,2,Story,Edit detection settings from the dashboard,"As an administrator I want to change the vacancy, wait and threshold settings and keep them after a restart.
+Acceptance: FR-2.6, FR-2.7.
+
+Priority: Medium",module-2 priority-medium,3,SCEM Sprint 2
+17,3,Task,"Design test cases (EP, BVA, validation, integration)","78 test cases in the PBL format: TC ID, Module, Test Scenario, Test Data, Expected, Actual, Status.
+
+Priority: High",testing priority-high,3,SCEM Sprint 3
+18,3,Task,Automate unit tests for Module 1,"tests/engine_cases.py - 32 cases.
+
+Priority: High",testing priority-high,2,SCEM Sprint 3
+19,3,Task,Automate API and integration tests,"tests/api_cases.py - 24 Module 2 API cases and 7 integration cases.
+
+Priority: High",testing priority-high,3,SCEM Sprint 3
+20,3,Task,Automate dashboard UI tests in Microsoft Edge,"tests/ui - 15 UI cases that fill the forms and read the page.
+
+Priority: Medium",testing priority-medium,3,SCEM Sprint 3
+21,3,Task,Execute test run 1 and log defects in Jira,"Run python -m tests.run_tests run1-initial; record every failure as a Bug.
+
+Priority: High",testing priority-high,1,SCEM Sprint 3
+22,3,Task,Retest after bug fixes (run 2),"Run python -m tests.run_tests run2-retest; close bugs whose test cases pass.
+
+Priority: High",testing priority-high,1,SCEM Sprint 3
+23,4,Task,Prepare project report and presentation,"Report (PDF) and PPT for the PBL evaluation.
+
+Priority: Medium",docs priority-medium,3,SCEM Sprint 3
+24,7,Subtask,Implement vacancy counter in RoomMonitor,,,,
+25,7,Subtask,Unit tests TC_M1_11 to TC_M1_13,,,,
+26,8,Subtask,Implement fan/light wastage alerts,,,,
+27,8,Subtask,Unit tests TC_M1_14 to TC_M1_18,,,,
+28,9,Subtask,Implement Delta T calculation and AC inference,,,,
+29,9,Subtask,Unit tests TC_M1_19 to TC_M1_26,,,,
+30,10,Subtask,Implement Frame.from_dict validation,,,,
+31,10,Subtask,Unit tests TC_M1_01 to TC_M1_10,,,,
+32,12,Subtask,"Create SQLite schema (rooms, readings, alerts, commands, settings)",,,,
+33,12,Subtask,Implement POST /api/readings,,,,
+34,13,Subtask,Build status card and heatmap UI,,,,
+35,13,Subtask,UI tests TC_UI_01 to TC_UI_04,,,,
+36,14,Subtask,Implement alert list and acknowledge API,,,,
+37,14,Subtask,Build acknowledge form,,,,
+38,15,Subtask,Implement override and command API,,,,
+39,15,Subtask,Build override form and command list,,,,
+40,16,Subtask,Implement settings API with persistence,,,,
+41,16,Subtask,Build settings form,,,,
+42,2,Bug,[BUG-01] Dashboard shows OCCUPIED for a room that has not sent any reading,"A room with no readings in the database is shown with the green OCCUPIED badge, so the operator cannot tell an occupied room from a room whose sensor node is offline.
+
+Found by: Exploratory testing of the dashboard; reproduced by TC_UI_01 in run1-initial
+Severity: Minor
+
+Steps to reproduce:
+1. Start the server with a new database: python -m app.server --db data/new.db
+2. Open http://127.0.0.1:8090 in the browser
+3. Select room CR-201 (no reading has been posted for it)
+
+Expected: State badge shows NO DATA (FR-2.2)
+Actual: State badge shows OCCUPIED
+
+Resolution: Fixed - RoomMonitor.status() now reports NO_DATA until the first frame is received; the dashboard shows the NO DATA badge (app/engine.py).
+Retest: TC_UI_01 PASS in run2-retest
+
+Priority: Medium",bug severity-minor priority-medium,,SCEM Sprint 3
+43,1,Bug,[BUG-02] False AC_ON_VACANT alert when the mean temperature drop is just below the threshold,"The mean drop was rounded to 2 decimals before being compared with delta_t_threshold, so a drop of 0.499 deg C became 0.50 and the AC was reported ON in a room where it is off.
+
+Found by: TC_M1_21 (BVA: threshold - 0.001) in run1-initial
+Severity: Major
+
+Steps to reproduce:
+1. Settings: vacancy_frames=5, wait_seconds=60, delta_t_threshold=0.5
+2. Send 2 occupied frames, then 5 empty frames with all regions at 25.0 deg C
+3. 60 s after vacancy is confirmed, send an empty frame with all regions at 24.501 deg C
+
+Expected: ac_inferred_on=False, no alert (mean drop 0.499 < 0.5, FR-1.6)
+Actual: ac_inferred_on=True and AC_ON_VACANT alert raised
+
+Resolution: Fixed - the comparison uses the unrounded mean (rounded to 6 decimals only to remove floating-point noise); 2-3 decimal rounding is kept only for display (app/engine.py).
+Retest: TC_M1_19, TC_M1_20, TC_M1_21, TC_M1_22 PASS in run2-retest
+
+Priority: High",bug severity-major priority-high,,SCEM Sprint 3
+44,2,Bug,[BUG-03] API returns 404 'Room None not found.' when room_id is missing,"A reading posted without room_id is treated as a lookup of a room called None. The status code and message hide the real problem from the sensor-node developer.
+
+Found by: TC_M2_04 in run1-initial
+Severity: Minor
+
+Steps to reproduce:
+1. Start the server
+2. POST /api/readings with a valid frame body that has no room_id field
+
+Expected: 400: room_id is required. (FR-2.1)
+Actual: 404: Room None not found.
+
+Resolution: Fixed - a missing or empty room_id is rejected with 400 'room_id is required.' before the room lookup (app/server.py).
+Retest: TC_M2_04 PASS, TC_M2_03 still PASS in run2-retest
+
+Priority: Low",bug severity-minor priority-low,,SCEM Sprint 3
+45,2,Bug,[BUG-04] Settings validation messages on the dashboard show internal field names,"The settings form displays the API message as it is, e.g. 'vacancy_frames must be between 1 and 300.', instead of the label the operator sees on the form.
+
+Found by: TC_UI_14 and TC_UI_15 in run1-initial
+Severity: Trivial
+
+Steps to reproduce:
+1. Open the dashboard
+2. In Detection settings enter Empty frames = 301, Wait = 60, Threshold = 0.5
+3. Click Save settings
+
+Expected: Empty frames to confirm vacancy must be between 1 and 300. (FR-2.7)
+Actual: vacancy_frames must be between 1 and 300.
+
+Resolution: Fixed - the dashboard replaces the API field name with the form label before showing the message (app/static/app.js).
+Retest: TC_UI_14, TC_UI_15 PASS in run2-retest
+
+Priority: Low",bug severity-trivial priority-low,,SCEM Sprint 3

@@ -1,0 +1,2 @@
+# Local demo databases: the servers recreate them with the demo data on start.
+*.db

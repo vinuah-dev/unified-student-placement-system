@@ -1,0 +1,11 @@
+# Documents, images and build files are binary: no line-ending conversion.
+*.pdf binary
+*.docx binary
+*.pptx binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.jar binary
+*.class binary
+*.exec binary
+*.woff2 binary

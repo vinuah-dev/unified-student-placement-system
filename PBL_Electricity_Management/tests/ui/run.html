@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI test run</title>
+<style>
+  body { margin: 14px; font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #d7dce4; padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; }
+  .PASS { color: #166534; font-weight: 700; }
+  .FAIL { color: #a31f1f; font-weight: 700; }
+  iframe { width: 1200px; height: 900px; border: 1px solid #ccc; margin-top: 12px; }
+</style>
+</head>
+<body>
+<h1 style="font-size:17px;margin:0 0 4px">PBL - Dashboard UI test run</h1>
+<p id="summary">Running…</p>
+<table><thead><tr><th>TC ID</th><th>Scenario</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead><tbody id="rows"></tbody></table>
+<iframe id="frame" title="Dashboard under test"></iframe>
+<pre id="results-json" hidden></pre>
+<script>
+function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
+async function waitFor(cond, timeout = 5000) {
+  const start = Date.now();
+  while (Date.now() - start < timeout) {
+    try { if (cond()) return; } catch (e) { /* page still loading */ }
+    await sleep(50);
+  }
+  throw new Error("timed out waiting for the page");
+}
+function loadDashboard(frame) {
+  return new Promise((resolve) => {
+    frame.onload = async () => {
+      const doc = frame.contentDocument;
+      await waitFor(() => doc.querySelectorAll("#roomTabs button").length > 0 && doc.getElementById("setFrames").value !== "");
+      resolve(doc);
+    };
+    frame.src = "/?run=" + Date.now();
+  });
+}
+</script>
+<script src="ui_cases.js"></script>
+<script>
+(async function () {
+  const frame = document.getElementById("frame");
+  const results = [];
+  for (const tc of UI_CASES) {
+    let actual;
+    try {
+      const doc = await loadDashboard(frame);
+      actual = await tc.run(doc);
+    } catch (e) {
+      actual = "ERROR: " + e.message;
+    }
+    const status = actual === tc.expected ? "PASS" : "FAIL";
+    results.push({ id: tc.id, module: tc.module, technique: tc.technique, scenario: tc.scenario, data: tc.data,
+                   expected: tc.expected, actual: actual, status: status });
+    const tr = document.createElement("tr");
+    [tc.id, tc.scenario, tc.expected, actual, status].forEach((v, i) => {
+      const td = document.createElement("td");
+      td.textContent = v;
+      if (i === 4) td.className = status;
+      tr.appendChild(td);
+    });
+    document.getElementById("rows").appendChild(tr);
+  }
+  const passed = results.filter((r) => r.status === "PASS").length;
+  document.getElementById("summary").textContent = results.length + " UI test cases · " + passed + " passed · " +
+    (results.length - passed) + " failed · " + new Date().toString();
+  document.getElementById("results-json").textContent = JSON.stringify(results);
+  frame.remove();
+  document.title = "DONE";
+})();
+</script>
+</body>
+</html>

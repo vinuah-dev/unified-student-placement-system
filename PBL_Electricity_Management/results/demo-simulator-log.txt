@@ -1,0 +1,16 @@
+t=  0s  state=OCCUPIED people=12 fans=4 lights=6 temps=[24.6, 25.1, 24.2, 25.4]
+t= 15s  state=CHECKING_AC people=0 fans=0 lights=0 temps=[24.62, 25.12, 24.23, 25.42]
+t= 30s  state=CHECKING_AC people=0 fans=0 lights=0 temps=[24.68, 25.16, 24.3, 25.48]
+t= 45s  state=CHECKING_AC people=0 fans=0 lights=0 temps=[24.74, 25.21, 24.38, 25.54]
+t= 60s  state=CHECKING_AC people=0 fans=0 lights=0 temps=[24.8, 25.25, 24.45, 25.6]
+t= 75s  state=VACANT people=0 fans=0 lights=0 temps=[24.86, 25.3, 24.53, 25.66]
+-----
+t=  0s  state=OCCUPIED people=12 fans=4 lights=6 temps=[24.6, 25.1, 24.2, 25.4]
+t= 14s  ALERT FAN_ON_VACANT: 2 fan(s) ON in vacant room LAB-1.
+t= 14s  ALERT LIGHT_ON_VACANT: 6 light(s) ON in vacant room LAB-1.
+t= 15s  state=CHECKING_AC people=0 fans=2 lights=6 temps=[24.54, 25.05, 24.13, 25.35]
+t= 30s  state=CHECKING_AC people=0 fans=2 lights=6 temps=[24.39, 24.93, 23.95, 25.21]
+t= 45s  state=CHECKING_AC people=0 fans=2 lights=6 temps=[24.24, 24.81, 23.77, 25.08]
+t= 60s  state=CHECKING_AC people=0 fans=2 lights=6 temps=[24.09, 24.69, 23.59, 24.94]
+t= 74s  ALERT AC_ON_VACANT: AC appears to be ON in vacant room LAB-1 (mean temperature drop 0.58 deg C in 60 s).
+t= 75s  state=VACANT people=0 fans=2 lights=6 temps=[23.94, 24.57, 23.41, 24.81]

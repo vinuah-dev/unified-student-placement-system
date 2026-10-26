@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update Profile · Online Leave Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Online Leave Management System</h1>
+  <p>Faculty leave portal · Software Engineering Lab demo</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="apply-leave.html">Apply for Leave</a>
+  <a href="profile.html" class="active">Update Profile</a>
+  <a href="approve-leave.html">Approve / Reject</a>
+  <a href="leave-balance.html">Leave Balance</a>
+</nav>
+<main>
+  <section class="card">
+    <h2>Form 2 · Update Faculty Profile</h2>
+    <p class="sub">Faculty member updates the contact details used for leave notifications. All fields are mandatory.</p>
+    <form id="profileForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="facultyId">Faculty ID *</label>
+          <input type="text" id="facultyId" placeholder="e.g. FAC101">
+          <div class="hint">FAC followed by 3 digits</div>
+        </div>
+        <div class="field">
+          <label for="department">Department *</label>
+          <select id="department">
+            <option value="">-- Select --</option>
+            <option value="CSE">Computer Science &amp; Engg. (CSE)</option>
+            <option value="IT">Information Technology (IT)</option>
+            <option value="ECE">Electronics &amp; Comm. (ECE)</option>
+            <option value="EE">Electrical Engg. (EE)</option>
+            <option value="ME">Mechanical Engg. (ME)</option>
+            <option value="CE">Civil Engg. (CE)</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="fullName">Full name *</label>
+        <input type="text" id="fullName" placeholder="e.g. Dr. Anita Deshmukh">
+        <div class="hint">3 to 50 characters; letters, spaces and dots only</div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="name@college.edu">
+        </div>
+        <div class="field">
+          <label for="mobile">Mobile number *</label>
+          <input type="tel" id="mobile" placeholder="10 digits">
+          <div class="hint">10 digits, starting with 6, 7, 8 or 9</div>
+        </div>
+      </div>
+      <button type="submit">Save profile</button><button type="reset" class="secondary">Clear</button>
+      <div id="result" class="result" role="status"></div>
+    </form>
+  </section>
+</main>
+<footer>Demo data is reset on every page load.</footer>
+<script src="js/common.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

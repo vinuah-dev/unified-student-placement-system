@@ -1,0 +1,1516 @@
+{
+  "label": "run1",
+  "executed_at": "2026-10-26T11:10:55",
+  "results": [
+    {
+      "id": "TC_M1_01",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (valid)",
+      "scenario": "Valid job posting with all criteria",
+      "data": "Backend Developer, 9 LPA, Pune, deadline 05-11-2026 17:00, CGPA>=7, CSE, 0 backlogs, 2023-2027",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_02",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min-1)",
+      "scenario": "Title of 2 characters",
+      "data": "title='QA'",
+      "expected": "Title must be 3 to 120 characters.",
+      "actual": "Title must be 3 to 120 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_03",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min)",
+      "scenario": "Title of 3 characters",
+      "data": "title='SDE'",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_04",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max)",
+      "scenario": "Title of 120 characters",
+      "data": "title='A'*120",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_05",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max+1)",
+      "scenario": "Title of 121 characters",
+      "data": "title='A'*121",
+      "expected": "Title must be 3 to 120 characters.",
+      "actual": "Title must be 3 to 120 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_06",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min-1)",
+      "scenario": "Description of 19 characters",
+      "data": "description='Write code for APIs' (19)",
+      "expected": "Description must be 20 to 2000 characters.",
+      "actual": "Description must be 20 to 2000 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_07",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min-1)",
+      "scenario": "Package of 0 LPA",
+      "data": "ctc=0",
+      "expected": "Package (CTC) must be a positive number up to 100 LPA.",
+      "actual": "Package (CTC) must be a positive number up to 100 LPA.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_08",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min)",
+      "scenario": "Package just above 0",
+      "data": "ctc=0.1",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_09",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max)",
+      "scenario": "Package of 100 LPA",
+      "data": "ctc=100",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_10",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max+)",
+      "scenario": "Package above 100 LPA",
+      "data": "ctc=100.5",
+      "expected": "Package (CTC) must be a positive number up to 100 LPA.",
+      "actual": "Package (CTC) must be a positive number up to 100 LPA.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_11",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid)",
+      "scenario": "Package typed as words",
+      "data": "ctc='eight'",
+      "expected": "Package (CTC) must be a number.",
+      "actual": "Package (CTC) must be a number.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_12",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / Validation",
+      "scenario": "Location left empty",
+      "data": "location=''",
+      "expected": "Location is required (2 to 80 characters).",
+      "actual": "Location is required (2 to 80 characters).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_13",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (equal)",
+      "scenario": "Deadline equal to the current time",
+      "data": "deadline=26-10-2026 10:00 (= now)",
+      "expected": "Deadline must be a future date and time.",
+      "actual": "Deadline must be a future date and time.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_14",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (now+1 min)",
+      "scenario": "Deadline one minute in the future",
+      "data": "deadline=26-10-2026 10:01",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_15",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid)",
+      "scenario": "Deadline that is not a date",
+      "data": "deadline='next friday'",
+      "expected": "Deadline must be a future date and time.",
+      "actual": "Deadline must be a future date and time.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_16",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / Validation",
+      "scenario": "No eligibility criterion given (UC-2 E1)",
+      "data": "all four criteria blank",
+      "expected": "At least one eligibility criterion is required.",
+      "actual": "At least one eligibility criterion is required.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_17",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max)",
+      "scenario": "Minimum CGPA of 10",
+      "data": "min_cgpa=10",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_18",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max+)",
+      "scenario": "Minimum CGPA above 10",
+      "data": "min_cgpa=10.01",
+      "expected": "Minimum CGPA must be between 0 and 10.",
+      "actual": "Minimum CGPA must be between 0 and 10.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_19",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min-1)",
+      "scenario": "Maximum backlogs of -1",
+      "data": "max_backlogs=-1",
+      "expected": "Maximum backlogs must be a whole number from 0 to 10.",
+      "actual": "Maximum backlogs must be a whole number from 0 to 10.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_20",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid)",
+      "scenario": "Maximum backlogs not a whole number",
+      "data": "max_backlogs=1.5",
+      "expected": "Maximum backlogs must be a whole number from 0 to 10.",
+      "actual": "Maximum backlogs must be a whole number from 0 to 10.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_21",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid)",
+      "scenario": "Branch that does not exist",
+      "data": "allowed_branches=['CSE', 'AI']",
+      "expected": "Allowed branches must be chosen from CSE, IT, ECE, EE, ME, CE.",
+      "actual": "Allowed branches must be chosen from CSE, IT, ECE, EE, ME, CE.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_22",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid)",
+      "scenario": "Batch spanning 3 years",
+      "data": "batch='2023-2026'",
+      "expected": "Batch must look like 2023-2027.",
+      "actual": "Batch must look like 2023-2027.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_23",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (valid)",
+      "scenario": "Only one criterion (batch) given",
+      "data": "batch='2024-2028', others blank",
+      "expected": "accepted",
+      "actual": "accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_24",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (eligible)",
+      "scenario": "Student meeting every criterion of J-1",
+      "data": "Aarav: CSE, CGPA 8.60, 0 backlogs, 2023-2027 vs J-1",
+      "expected": "eligible",
+      "actual": "eligible",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_25",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (equal)",
+      "scenario": "CGPA exactly equal to the minimum",
+      "data": "CGPA 7.00 vs min 7.0",
+      "expected": "eligible",
+      "actual": "eligible",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_26",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min-0.01)",
+      "scenario": "CGPA just below the minimum",
+      "data": "CGPA 6.99 vs min 7.0",
+      "expected": "CGPA 6.99 is below the minimum 7.00.",
+      "actual": "CGPA 6.99 is below the minimum 7.00.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_27",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid class)",
+      "scenario": "Branch not in the allowed list",
+      "data": "Diya as ME student vs CSE/IT",
+      "expected": "Branch ME is not in the allowed branches (CSE, IT).",
+      "actual": "Branch ME is not in the allowed branches (CSE, IT).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_28",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (equal, max+1)",
+      "scenario": "Backlogs equal to and one above the maximum",
+      "data": "max 1 backlog: student with 1, then with 2",
+      "expected": "eligible / Active backlogs 2 exceed the maximum 1.",
+      "actual": "eligible / Active backlogs 2 exceed the maximum 1.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_29",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / Functional",
+      "scenario": "Several unmet criteria are all reported",
+      "data": "Kabir (ECE, 6.80, 1) vs J-1",
+      "expected": "CGPA 6.80 is below the minimum 7.00. | Branch ECE is not in the allowed branches (CSE, IT). | Active backlogs 1 exceed the maximum 0.",
+      "actual": "CGPA 6.80 is below the minimum 7.00. | Branch ECE is not in the allowed branches (CSE, IT). | Active backlogs 1 exceed the maximum 0.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_30",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / Functional",
+      "scenario": "Batch does not match",
+      "data": "Rohan (ME, 2 backlogs, 2022-2026) vs J-1",
+      "expected": "Branch ME is not in the allowed branches (CSE, IT). | Active backlogs 2 exceed the maximum 0. | Batch 2022-2026 does not match the required batch 2023-2027.",
+      "actual": "Branch ME is not in the allowed branches (CSE, IT). | Active backlogs 2 exceed the maximum 0. | Batch 2022-2026 does not match the required batch 2023-2027.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_31",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP",
+      "scenario": "Criteria that are not set are not checked",
+      "data": "rule: only CGPA >= 6.0; Rohan",
+      "expected": "eligible",
+      "actual": "eligible",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_32",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (valid)",
+      "scenario": "Approve without remarks",
+      "data": "pending, approve, remarks=''",
+      "expected": "published",
+      "actual": "published",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_33",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min-1)",
+      "scenario": "Reject with 4-character remarks",
+      "data": "reject, remarks='Late'",
+      "expected": "Remarks (5 to 200 characters) are required to reject or return a posting.",
+      "actual": "Remarks (5 to 200 characters) are required to reject or return a posting.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_34",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (min)",
+      "scenario": "Reject with 5-character remarks",
+      "data": "reject, remarks='Spam.'",
+      "expected": "rejected",
+      "actual": "rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_35",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / BVA (max+1)",
+      "scenario": "Approve with 201-character remarks",
+      "data": "approve, remarks='x'*201",
+      "expected": "Remarks cannot exceed 200 characters.",
+      "actual": "Remarks cannot exceed 200 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_36",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / EP (invalid)",
+      "scenario": "Unknown decision",
+      "data": "decision='hold'",
+      "expected": "Decision must be approve, reject or return.",
+      "actual": "Decision must be approve, reject or return.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_37",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Unit / Validation",
+      "scenario": "Deciding a job that is already published",
+      "data": "status=published, approve",
+      "expected": "This job is not pending approval (status: published).",
+      "actual": "This job is not pending approval (status: published).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_38",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Recruiter of an approved company posts a job (UC-2 step 1-2)",
+      "data": "POST /api/jobs as recruiter 1 (Nimbus) with the valid posting",
+      "expected": "200: Job J-5 submitted for approval (status: Pending). | status=pending | officer notified=True",
+      "actual": "200: Job J-5 submitted for approval (status: Pending). | status=pending | officer notified=True",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_39",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API) / FR-09",
+      "scenario": "Recruiter of a company that is not approved",
+      "data": "POST /api/jobs as recruiter 3 (Vertex Labs, not approved)",
+      "expected": "403: Your company is not yet approved by the placement cell.",
+      "actual": "403: Your company is not yet approved by the placement cell.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_40",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Validation (API)",
+      "scenario": "Server validates the posting, not only the page",
+      "data": "title=''",
+      "expected": "400: Title must be 3 to 120 characters.",
+      "actual": "400: Title must be 3 to 120 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_41",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API) / BR-02",
+      "scenario": "Recruiter tries to approve a posting",
+      "data": "POST /api/jobs/3/decision approve as recruiter 1",
+      "expected": "403: Only a Placement Officer can approve or reject job postings.",
+      "actual": "403: Only a Placement Officer can approve or reject job postings.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_42",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API) / FR-25",
+      "scenario": "Officer approves J-3; eligible unplaced students notified",
+      "data": "J-3 needs CGPA>=7.5, 0 backlogs; students 101-105",
+      "expected": "200: Job J-3 published. 1 eligible student(s) notified. | students notified: [101]",
+      "actual": "200: Job J-3 published. 1 eligible student(s) notified. | students notified: [101]",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_43",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Validation (API)",
+      "scenario": "Officer rejects without remarks",
+      "data": "decision=reject, remarks=''",
+      "expected": "400: Remarks (5 to 200 characters) are required to reject or return a posting.",
+      "actual": "400: Remarks (5 to 200 characters) are required to reject or return a posting.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_44",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Officer returns J-3 with remarks (UC-2 A1)",
+      "data": "decision=return, remarks='Add the batch criterion.'",
+      "expected": "200: Job J-3 returned to the recruiter for changes. | recruiter 1 told with remarks=True",
+      "actual": "200: Job J-3 returned to the recruiter for changes. | recruiter 1 told with remarks=True",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_45",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Validation (API)",
+      "scenario": "Deciding a job that is already published",
+      "data": "approve J-1 (published)",
+      "expected": "409: This job is not pending approval (status: published).",
+      "actual": "409: This job is not pending approval (status: published).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_46",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Recruiter edits and resubmits the returned posting",
+      "data": "PUT /api/jobs/3 by recruiter 1 after it was returned",
+      "expected": "200: Job J-3 resubmitted for approval (status: Pending). | status=pending",
+      "actual": "200: Job J-3 resubmitted for approval (status: Pending). | status=pending",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_47",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Another recruiter tries to edit the returned posting",
+      "data": "PUT /api/jobs/3 by recruiter 2",
+      "expected": "403: You can edit only your own job postings. | status=returned",
+      "actual": "403: You can edit only your own job postings. | status=returned",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_48",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Validation (API)",
+      "scenario": "Editing a posting that was not returned",
+      "data": "PUT /api/jobs/3 while pending",
+      "expected": "409: Only a posting returned for changes can be edited (status: pending). | status=pending",
+      "actual": "409: Only a posting returned for changes can be edited (status: pending). | status=pending",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_49",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API) / FR-12",
+      "scenario": "Students see only published jobs, open ones first",
+      "data": "GET /api/jobs (J-3 is pending, J-4 deadline passed)",
+      "expected": "J-2, J-1, J-4",
+      "actual": "J-2, J-1, J-4",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_50",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Jobs whose deadline passed are marked closed",
+      "data": "GET /api/jobs?student_id=101",
+      "expected": "J-2 open, J-1 open, J-4 closed",
+      "actual": "J-2 open, J-1 open, J-4 closed",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_51",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "EP (API)",
+      "scenario": "Keyword search ignores case and looks in the description",
+      "data": "q=FIRMWARE",
+      "expected": "J-2, J-4",
+      "actual": "J-2, J-4",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_52",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "EP (API)",
+      "scenario": "Keyword search on company name",
+      "data": "q=nimbus",
+      "expected": "J-1",
+      "actual": "J-1",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_53",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "EP (API)",
+      "scenario": "Location filter",
+      "data": "location=pune",
+      "expected": "J-1",
+      "actual": "J-1",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_54",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "BVA (API)",
+      "scenario": "Minimum package equal to a job's package",
+      "data": "min_ctc=6 (J-2 is 6.0 LPA)",
+      "expected": "J-2, J-1",
+      "actual": "J-2, J-1",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_55",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "EP (API, invalid)",
+      "scenario": "Minimum package that is not a number",
+      "data": "min_ctc=abc",
+      "expected": "400: Minimum package must be a number.",
+      "actual": "400: Minimum package must be a number.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_56",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Eligible-only filter",
+      "data": "student 103 (ECE, 6.80, 1 backlog), eligible_only=1",
+      "expected": "J-2, J-4",
+      "actual": "J-2, J-4",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_57",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API)",
+      "scenario": "Pagination of the job list",
+      "data": "per_page=2&page=2",
+      "expected": "page 2 of 2 (3 jobs): J-4",
+      "actual": "page 2 of 2 (3 jobs): J-4",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_58",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "BVA (API, min-1)",
+      "scenario": "Page number 0",
+      "data": "page=0",
+      "expected": "400: Page must be a whole number of at least 1.",
+      "actual": "400: Page must be a whole number of at least 1.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M1_59",
+      "module": "M1 Job Posting & Eligibility",
+      "technique": "Functional (API) / FR-14",
+      "scenario": "Eligibility check with reasons is recorded",
+      "data": "GET /api/jobs/1/eligibility?student_id=105",
+      "expected": "200: eligible=False; Branch ME is not in the allowed branches (CSE, IT). Active backlogs 2 exceed the maximum 0. Batch 2022-2026 does not match the required batch 2023-2027.; recorded=1",
+      "actual": "200: eligible=False; Branch ME is not in the allowed branches (CSE, IT). Active backlogs 2 exceed the maximum 0. Batch 2022-2026 does not match the required batch 2023-2027.; recorded=1",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_01",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / Functional",
+      "scenario": "First recruiter step from Applied",
+      "data": "Applied + under_review",
+      "expected": "Under Review",
+      "actual": "Under Review",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_02",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / Functional",
+      "scenario": "Main success path of the statechart",
+      "data": "Applied + under_review, shortlist, schedule_interview, interview_result, offer_letter, accept_offer",
+      "expected": "Applied -> Under Review -> Shortlisted -> Interview Scheduled -> Selected -> Offer Issued -> Accepted",
+      "actual": "Applied -> Under Review -> Shortlisted -> Interview Scheduled -> Selected -> Offer Issued -> Accepted",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_03",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / Functional",
+      "scenario": "Rescheduling keeps the interview state",
+      "data": "Interview Scheduled + reschedule",
+      "expected": "Interview Scheduled",
+      "actual": "Interview Scheduled",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_04",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / EP",
+      "scenario": "Reject from each state that allows it",
+      "data": "reject from Under Review, Shortlisted, Interview Scheduled, Selected",
+      "expected": "Rejected, Rejected, Rejected, Rejected",
+      "actual": "Rejected, Rejected, Rejected, Rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_05",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / Validation / BR-08",
+      "scenario": "Offer letter before the candidate is selected",
+      "data": "Shortlisted + offer_letter",
+      "expected": "Event 'offer_letter' is not allowed when the application is Shortlisted.",
+      "actual": "Event 'offer_letter' is not allowed when the application is Shortlisted.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_06",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / Validation",
+      "scenario": "Withdraw after the review has started",
+      "data": "Under Review + withdraw",
+      "expected": "Event 'withdraw' is not allowed when the application is Under Review.",
+      "actual": "Event 'withdraw' is not allowed when the application is Under Review.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_07",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / Validation",
+      "scenario": "Any step from a final state",
+      "data": "Accepted + reject",
+      "expected": "Event 'reject' is not allowed when the application is Accepted.",
+      "actual": "Event 'reject' is not allowed when the application is Accepted.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_08",
+      "module": "M2 Application & Tracking",
+      "technique": "Unit / BVA",
+      "scenario": "Tracking id format at the smallest and largest 4-digit numbers",
+      "data": "tracking_id(1, 2026), tracking_id(9999, 2026)",
+      "expected": "USPS-26-0001, USPS-26-9999",
+      "actual": "USPS-26-0001, USPS-26-9999",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_09",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / UC-1",
+      "scenario": "Eligible student applies with the active resume",
+      "data": "student 101 -> J-1, resume 1, cover note ''",
+      "expected": "200: Application submitted for J-1. Tracking id USPS-26-0001.",
+      "actual": "200: Application submitted for J-1. Tracking id USPS-26-0001.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_10",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Stored status and notifications after applying",
+      "data": "student 101 -> J-1",
+      "expected": "status=Applied | recruiter notified=True | student confirmation=True",
+      "actual": "status=Applied | recruiter notified=True | student confirmation=True",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_11",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API)",
+      "scenario": "Applying to a job that is not published",
+      "data": "student 101 -> J-3 (pending)",
+      "expected": "409: Job J-3 is not open for applications.",
+      "actual": "409: Job J-3 is not open for applications.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_12",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API) / BR-04",
+      "scenario": "Applying after the deadline (UC-1 E2)",
+      "data": "student 103 -> J-4 (deadline 25-10-2026 10:00)",
+      "expected": "409: The application deadline for J-4 has passed.",
+      "actual": "409: The application deadline for J-4 has passed.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_13",
+      "module": "M2 Application & Tracking",
+      "technique": "BVA (API)",
+      "scenario": "Applying one minute before the deadline",
+      "data": "clock 15-11-2026 09:59, J-2",
+      "expected": "200: Application submitted for J-2. Tracking id USPS-26-0001.",
+      "actual": "200: Application submitted for J-2. Tracking id USPS-26-0001.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_14",
+      "module": "M2 Application & Tracking",
+      "technique": "BVA (API)",
+      "scenario": "Applying exactly at the deadline",
+      "data": "clock 15-11-2026 10:00, J-2",
+      "expected": "409: The application deadline for J-2 has passed.",
+      "actual": "409: The application deadline for J-2 has passed.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_15",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API) / BR-05",
+      "scenario": "Already placed student applies",
+      "data": "student 104 (placed) -> J-1",
+      "expected": "409: You are already placed; the placement policy blocks further applications.",
+      "actual": "409: You are already placed; the placement policy blocks further applications.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_16",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API) / BR-03",
+      "scenario": "Ineligible student applies (UC-1 E1)",
+      "data": "student 103 -> J-1",
+      "expected": "409: You are not eligible for J-1: CGPA 6.80 is below the minimum 7.00. Branch ECE is not in the allowed branches (CSE, IT). Active backlogs 1 exceed the maximum 0.",
+      "actual": "409: You are not eligible for J-1: CGPA 6.80 is below the minimum 7.00. Branch ECE is not in the allowed branches (CSE, IT). Active backlogs 1 exceed the maximum 0.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_17",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API)",
+      "scenario": "Second application to the same job (UC-1 E3)",
+      "data": "student 101 -> J-1 twice",
+      "expected": "409: You have already applied to J-1 (tracking id USPS-26-0001).",
+      "actual": "409: You have already applied to J-1 (tracking id USPS-26-0001).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_18",
+      "module": "M2 Application & Tracking",
+      "technique": "EP (API, invalid)",
+      "scenario": "Inactive resume selected",
+      "data": "resume 2 (Aarav v1, inactive)",
+      "expected": "400: Select one of your active resumes.",
+      "actual": "400: Select one of your active resumes.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_19",
+      "module": "M2 Application & Tracking",
+      "technique": "EP (API, invalid)",
+      "scenario": "Another student's resume selected",
+      "data": "resume 3 (Diya's)",
+      "expected": "400: Select one of your active resumes.",
+      "actual": "400: Select one of your active resumes.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_20",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API)",
+      "scenario": "No resume selected",
+      "data": "resume_id=null",
+      "expected": "400: Select one of your active resumes.",
+      "actual": "400: Select one of your active resumes.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_21",
+      "module": "M2 Application & Tracking",
+      "technique": "BVA (API, max)",
+      "scenario": "Cover note of 500 characters",
+      "data": "cover_note='a'*500",
+      "expected": "200: Application submitted for J-1. Tracking id USPS-26-0001.",
+      "actual": "200: Application submitted for J-1. Tracking id USPS-26-0001.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_22",
+      "module": "M2 Application & Tracking",
+      "technique": "BVA (API, max+1)",
+      "scenario": "Cover note of 501 characters",
+      "data": "cover_note='a'*501",
+      "expected": "400: Cover note cannot exceed 500 characters.",
+      "actual": "400: Cover note cannot exceed 500 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_23",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Rejected submissions leave no record (UC-1 postcondition)",
+      "data": "ineligible, pending job, inactive resume",
+      "expected": "applications=0, history=0",
+      "actual": "applications=0, history=0",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_24",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Recruiter moves the application to review",
+      "data": "recruiter 1: under_review",
+      "expected": "200: Application USPS-26-0001 is now Under Review.",
+      "actual": "200: Application USPS-26-0001 is now Under Review.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_25",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Status change is stored in the history and the student is notified",
+      "data": "apply, then under_review by recruiter 1",
+      "expected": "history: submit by student 101, under_review by recruiter 1 | student notified=True",
+      "actual": "history: submit by student 101, under_review by recruiter 1 | student notified=True",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_26",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API) / BR-08",
+      "scenario": "Offer letter straight from Applied",
+      "data": "recruiter 1: offer_letter",
+      "expected": "409: Event 'offer_letter' is not allowed when the application is Applied.",
+      "actual": "409: Event 'offer_letter' is not allowed when the application is Applied.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_27",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / BR-07",
+      "scenario": "Recruiter of another company changes the application",
+      "data": "recruiter 2 (Orbit): under_review on a J-1 application",
+      "expected": "403: Only the recruiter who posted this job or a Placement Officer can update this application.",
+      "actual": "403: Only the recruiter who posted this job or a Placement Officer can update this application.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_28",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Placement officer changes the application",
+      "data": "officer 1: under_review",
+      "expected": "200: Application USPS-26-0001 is now Under Review.",
+      "actual": "200: Application USPS-26-0001 is now Under Review.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_29",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / BR-07",
+      "scenario": "Recruiter sees only applicants of own jobs",
+      "data": "101 -> J-1 (recruiter 1), 103 -> J-2 (recruiter 2)",
+      "expected": "recruiter 1: ['USPS-26-0001'] | recruiter 2: ['USPS-26-0002']",
+      "actual": "recruiter 1: ['USPS-26-0001'] | recruiter 2: ['USPS-26-0002']",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_30",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Student tries a recruiter step on own application",
+      "data": "student 101: shortlist",
+      "expected": "403: Only the recruiter who posted this job or a Placement Officer can update this application.",
+      "actual": "403: Only the recruiter who posted this job or a Placement Officer can update this application.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_31",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Recruiter tries to accept the offer for the student",
+      "data": "Offer Issued, recruiter 1: accept_offer",
+      "expected": "403: Only the student who applied can respond to the offer.",
+      "actual": "403: Only the student who applied can respond to the offer.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_32",
+      "module": "M2 Application & Tracking",
+      "technique": "EP (API, invalid)",
+      "scenario": "Event name that does not exist",
+      "data": "event='hire'",
+      "expected": "400: Unknown event 'hire'.",
+      "actual": "400: Unknown event 'hire'.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_33",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / FR-16",
+      "scenario": "Student withdraws before the deadline",
+      "data": "student 101, Applied",
+      "expected": "200: Application USPS-26-0001 is now Withdrawn.",
+      "actual": "200: Application USPS-26-0001 is now Withdrawn.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_34",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Another student tries to withdraw it",
+      "data": "student 102 withdraws app 1",
+      "expected": "403: Only the student who applied can withdraw this application.",
+      "actual": "403: Only the student who applied can withdraw this application.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_35",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API)",
+      "scenario": "Withdraw after the review has started",
+      "data": "status Under Review",
+      "expected": "409: Only an application in the Applied state can be withdrawn (current: Under Review).",
+      "actual": "409: Only an application in the Applied state can be withdrawn (current: Under Review).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_36",
+      "module": "M2 Application & Tracking",
+      "technique": "BVA (API)",
+      "scenario": "Withdraw after the deadline",
+      "data": "clock moved to 25-11-2026 10:00 (J-1 deadline)",
+      "expected": "409: The deadline has passed; the application can no longer be withdrawn.",
+      "actual": "409: The deadline has passed; the application can no longer be withdrawn.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_37",
+      "module": "M2 Application & Tracking",
+      "technique": "Validation (API)",
+      "scenario": "Applying again after withdrawing (UC-1 E3)",
+      "data": "withdraw, then apply to J-1",
+      "expected": "409: You have already applied to J-1 (tracking id USPS-26-0001).",
+      "actual": "409: You have already applied to J-1 (tracking id USPS-26-0001).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_38",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / BR-01",
+      "scenario": "Student accepts the offer and becomes placed",
+      "data": "Offer Issued, student 101: accept_offer",
+      "expected": "200: Application USPS-26-0001 is now Accepted. | is_placed=1",
+      "actual": "200: Application USPS-26-0001 is now Accepted. | is_placed=1",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_39",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / BR-01",
+      "scenario": "Accepting a second offer",
+      "data": "offers for J-1 and J-2, accept J-1 then J-2",
+      "expected": "409: You already hold an accepted offer; the placement policy allows only one.",
+      "actual": "409: You already hold an accepted offer; the placement policy allows only one.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_40",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Student declines the offer",
+      "data": "Offer Issued, student 101: reject_offer",
+      "expected": "200: Application USPS-26-0001 is now Rejected.",
+      "actual": "200: Application USPS-26-0001 is now Rejected.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_41",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API) / FR-17",
+      "scenario": "Timeline holds every step with its actor",
+      "data": "full path to Accepted, GET /api/applications/1",
+      "expected": "7 entries: submit, under_review, shortlist, schedule_interview, interview_result, offer_letter, accept_offer",
+      "actual": "7 entries: submit, under_review, shortlist, schedule_interview, interview_result, offer_letter, accept_offer",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_M2_42",
+      "module": "M2 Application & Tracking",
+      "technique": "Functional (API)",
+      "scenario": "Notifications and applications are listed newest first",
+      "data": "apply J-1, under_review, shortlist; apply J-2",
+      "expected": "3 notifications, newest is about Shortlisted=True | USPS-26-0002, USPS-26-0001",
+      "actual": "3 notifications, newest is about Shortlisted=True | USPS-26-0002, USPS-26-0001",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_01",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Functional",
+      "scenario": "Complete placement flow across both modules",
+      "data": "recruiter 1 posts J-5 (CGPA>=7, CSE/IT, 0 backlogs, 2023-2027) -> officer approves -> student 102 applies -> recruiter takes it to Offer Issued -> student accepts -> student applies to J-1",
+      "expected": "200: Job J-5 submitted for approval (status: Pending). | 200: Job J-5 published. 2 eligible student(s) notified. | notified [101, 102] | 200: Application submitted for J-5. Tracking id USPS-26-0001. | 200: Application USPS-26-0001 is now Accepted. | 409: You are already placed; the placement policy blocks further applications.",
+      "actual": "200: Job J-5 submitted for approval (status: Pending). | 200: Job J-5 published. 2 eligible student(s) notified. | notified [101, 102] | 200: Application submitted for J-5. Tracking id USPS-26-0001. | 200: Application USPS-26-0001 is now Accepted. | 409: You are already placed; the placement policy blocks further applications.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_02",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Functional",
+      "scenario": "Returned posting is fixed, resubmitted and published (UC-2 A1)",
+      "data": "officer returns J-3 -> recruiter 1 resubmits -> officer approves",
+      "expected": "returned -> pending -> published | on student board=True",
+      "actual": "returned -> pending -> published | on student board=True",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_03",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Functional",
+      "scenario": "Rejected posting is never visible or open (UC-2 E2)",
+      "data": "post J-5 -> officer rejects -> student 101 applies to J-5",
+      "expected": "on board=False | 409: Job J-5 is not open for applications.",
+      "actual": "on board=False | 409: Job J-5 is not open for applications.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_04",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Exception (UC-1 E4)",
+      "scenario": "Database error while saving rolls everything back",
+      "data": "tracking-id step fails with 'disk I/O error' during student 101 -> J-1",
+      "expected": "500: Your application could not be saved and nothing was stored. Please try again. | applications=0, history=0, new notifications=0",
+      "actual": "500: Your application could not be saved and nothing was stored. Please try again. | applications=0, history=0, new notifications=0",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_05",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / BVA",
+      "scenario": "Crossing the deadline closes the job for apply and withdraw",
+      "data": "101 applies to J-2, clock moves to J-2 deadline, 102 applies, 101 withdraws",
+      "expected": "200: Application submitted for J-2. Tracking id USPS-26-0001. | J-2 open=False | 409: The application deadline for J-2 has passed. | 409: The deadline has passed; the application can no longer be withdrawn.",
+      "actual": "200: Application submitted for J-2. Tracking id USPS-26-0001. | J-2 open=False | 409: The application deadline for J-2 has passed. | 409: The deadline has passed; the application can no longer be withdrawn.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_06",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Functional",
+      "scenario": "Eligibility on the job board matches the apply check (BR-03)",
+      "data": "students 101, 102, 103, 105 vs J-1",
+      "expected": "101:eligible/200, 102:eligible/200, 103:ineligible/409, 105:ineligible/409",
+      "actual": "101:eligible/200, 102:eligible/200, 103:ineligible/409, 105:ineligible/409",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_07",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Concurrency",
+      "scenario": "Five simultaneous identical applications",
+      "data": "5 parallel POSTs student 101 -> J-1",
+      "expected": "responses [200, 409, 409, 409, 409] | applications stored=1",
+      "actual": "responses [200, 409, 409, 409, 409] | applications stored=1",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_08",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Persistence",
+      "scenario": "Data is kept after a server restart and not re-seeded",
+      "data": "apply, stop server, start a new server on the same database file",
+      "expected": "students=5, jobs=4, applications=1, status=Applied",
+      "actual": "students=5, jobs=4, applications=1, status=Applied",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_INT_09",
+      "module": "Integration (M1 + M2)",
+      "technique": "Integration / Functional",
+      "scenario": "Data version that open pages poll for live updates (FR-2.12)",
+      "data": "GET /api/version before and after reads, a rejected apply and a job posting",
+      "expected": "after reads: same | after rejected request: same | after job posted: changed",
+      "actual": "after reads: same | after rejected request: same | after job posted: changed",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_01",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Student profile used for the eligibility check",
+      "data": "Acting as student 101",
+      "expected": "Aarav Kulkarni | Not placed | R23CS101 | CSE | 2023-2027 | 8.60 | 0",
+      "actual": "Aarav Kulkarni | Not placed | R23CS101 | CSE | 2023-2027 | 8.60 | 0",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_02",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Job board lists published jobs, open first, with eligibility",
+      "data": "Acting as student 101",
+      "expected": "(3 jobs) J-2: Eligible | J-1: Eligible | J-4: Closed, Not eligible",
+      "actual": "(3 jobs) J-2: Eligible | J-1: Eligible | J-4: Closed, Not eligible",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_03",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI) / FR-1.8",
+      "scenario": "Ineligible job shows the unmet criteria and Apply is disabled",
+      "data": "Student 105 (ME, 2 backlogs, 2022-2026), row J-1",
+      "expected": "Not eligible: Branch ME is not in the allowed branches (CSE, IT). / Active backlogs 2 exceed the maximum 0. / Batch 2022-2026 does not match the required batch 2023-2027. | Apply disabled=true",
+      "actual": "Not eligible: Branch ME is not in the allowed branches (CSE, IT). / Active backlogs 2 exceed the maximum 0. / Batch 2022-2026 does not match the required batch 2023-2027. | Apply disabled=true",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_04",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "EP (UI)",
+      "scenario": "Keyword search ignores case",
+      "data": "Keyword 'FIRMWARE'",
+      "expected": "(2 jobs) Embedded Systems Engineer, Firmware Intern",
+      "actual": "(2 jobs) Embedded Systems Engineer, Firmware Intern",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_05",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "EP (UI, invalid)",
+      "scenario": "Minimum package that is not a number",
+      "data": "Min package 'abc'",
+      "expected": "Minimum package must be a number.",
+      "actual": "Minimum package must be a number.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_06",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "'Eligible only' filter",
+      "data": "Student 103 (ECE, 6.80, 1 backlog), Eligible only ticked",
+      "expected": "(2 jobs) Embedded Systems Engineer, Firmware Intern",
+      "actual": "(2 jobs) Embedded Systems Engineer, Firmware Intern",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_07",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / FR-2.3",
+      "scenario": "Active resume is pre-selected, inactive one is labelled",
+      "data": "Student 101 has v2 (active) and v1 (inactive)",
+      "expected": "selected: Aarav_Resume_v2.pdf | options: Aarav_Resume_v2.pdf, Aarav_Resume_v1.pdf (inactive)",
+      "actual": "selected: -- Select a resume -- | options: Aarav_Resume_v2.pdf, Aarav_Resume_v1.pdf (inactive)",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_08",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Validation (UI) / UC-1 E1",
+      "scenario": "Choosing a job the student is not eligible for",
+      "data": "Student 103 chooses J-1",
+      "expected": "Not eligible: CGPA 6.80 is below the minimum 7.00. Branch ECE is not in the allowed branches (CSE, IT). Active backlogs 1 exceed the maximum 0. | Submit disabled=true",
+      "actual": "Not eligible: CGPA 6.80 is below the minimum 7.00. Branch ECE is not in the allowed branches (CSE, IT). Active backlogs 1 exceed the maximum 0. | Submit disabled=true",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_09",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Validation (UI) / UC-1 E2",
+      "scenario": "Choosing a job whose deadline has passed",
+      "data": "Student 103 chooses J-4 (closed)",
+      "expected": "The application deadline for J-4 has passed. | Submit disabled=true",
+      "actual": "The application deadline for J-4 has passed. | Submit disabled=true",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_10",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Apply button on the board opens the job in the apply form",
+      "data": "Click Apply on J-1",
+      "expected": "J-1 Software Engineer - Nimbus Analytics Pvt Ltd | You meet the eligibility criteria for this job.",
+      "actual": "J-1 Software Engineer - Nimbus Analytics Pvt Ltd | You meet the eligibility criteria for this job.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_11",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / UC-1",
+      "scenario": "Eligible student submits an application",
+      "data": "J-1, resume pre-selected, cover note 'Keen on backend work.'",
+      "expected": "Application submitted for J-1. Tracking id USPS-26-0001.",
+      "actual": "Select one of your active resumes.",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_12",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / FR-2.9",
+      "scenario": "Application appears in My applications with its timeline",
+      "data": "Click Timeline on USPS-26-0001",
+      "expected": "USPS-26-0001 | J-1 Software Engineer | Applied | done:  | current: Applied | 1 history entries",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelectorAll')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_13",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / FR-2.11",
+      "scenario": "Confirmation notification shown to the student",
+      "data": "Notifications of student 101",
+      "expected": "(1) mentions USPS-26-0001=true",
+      "actual": "(0) mentions USPS-26-0001=false",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_14",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Validation (UI) / UC-1 E3",
+      "scenario": "Applying to the same job again",
+      "data": "Student 101, J-1 again",
+      "expected": "You have already applied to J-1 (tracking id USPS-26-0001).",
+      "actual": "Select one of your active resumes.",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_15",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "BVA (UI, max+1)",
+      "scenario": "Cover note of 501 characters",
+      "data": "Student 102, J-1, cover note 'a'*501",
+      "expected": "501 / 500 (over) | Cover note cannot exceed 500 characters.",
+      "actual": "501 / 500 (over) | Select one of your active resumes.",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_16",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "EP (UI, invalid)",
+      "scenario": "Inactive resume chosen",
+      "data": "Student 101, J-2, resume Aarav_Resume_v1.pdf (inactive)",
+      "expected": "Select one of your active resumes.",
+      "actual": "Select one of your active resumes.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_17",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / FR-2.10",
+      "scenario": "Withdraw asks for confirmation; cancelling keeps the application",
+      "data": "Withdraw USPS-26-0001, answer Cancel",
+      "expected": "confirmation asked=true | status: Applied",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelectorAll')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_18",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / BR-07",
+      "scenario": "Recruiter of another company does not see the applicant",
+      "data": "Recruiter 2 (Orbit Systems)",
+      "expected": "No applications yet.",
+      "actual": "No applications yet.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_19",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Next steps offered for an Applied application follow the statechart",
+      "data": "Recruiter 1, USPS-26-0001 (Applied)",
+      "expected": "Aarav Kulkarni | R23CS101 | Aarav_Resume_v2.pdf | Applied | next: Move to review",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'children')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_20",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Validation (UI)",
+      "scenario": "Update without choosing a next step",
+      "data": "Recruiter 1, USPS-26-0001, -- Select --",
+      "expected": "Select the next step for USPS-26-0001.",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelector')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_21",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Recruiter moves the application to review",
+      "data": "Recruiter 1, USPS-26-0001, Move to review",
+      "expected": "Application USPS-26-0001 is now Under Review. | next: Shortlist, Reject",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelector')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_22",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / FR-2.9",
+      "scenario": "Student timeline after the review started",
+      "data": "Student 101, Timeline of USPS-26-0001",
+      "expected": "done: Applied | current: Under Review | 2 history entries",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelectorAll')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_23",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Validation (UI)",
+      "scenario": "Job form submitted empty",
+      "data": "All fields blank",
+      "expected": "Title must be 3 to 120 characters.",
+      "actual": "Title must be 3 to 120 characters.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_24",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Validation (UI)",
+      "scenario": "Deadline in the past",
+      "data": "Valid job, deadline 20-10-2026 10:00",
+      "expected": "Deadline must be a future date and time.",
+      "actual": "Deadline must be a future date and time.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_25",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Validation (UI) / UC-2 E1",
+      "scenario": "No eligibility criterion given",
+      "data": "Valid job, criteria all blank",
+      "expected": "At least one eligibility criterion is required.",
+      "actual": "At least one eligibility criterion is required.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_26",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI) / UC-2",
+      "scenario": "Recruiter posts a valid job",
+      "data": "Backend Developer, 9 LPA, Pune, 05-11-2026 17:00, CGPA>=7, CSE/IT, 0 backlogs",
+      "expected": "Job J-5 submitted for approval (status: Pending). | J-5 Backend Developer Pending",
+      "actual": "Job J-5 submitted for approval (status: Pending). | J-5 Backend Developer Pending",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_27",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI) / FR-09",
+      "scenario": "Recruiter of an unapproved company",
+      "data": "Recruiter 3 (Vertex Labs) submits a valid job",
+      "expected": "note shown=true | Your company is not yet approved by the placement cell.",
+      "actual": "note shown=true | Your company is not yet approved by the placement cell.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_28",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Officer sees the pending postings",
+      "data": "Officer 1",
+      "expected": "J-3 Data Analyst, J-5 Backend Developer",
+      "actual": "J-3 Data Analyst, J-5 Backend Developer",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_29",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Validation (UI)",
+      "scenario": "Decision not chosen",
+      "data": "J-3, no decision",
+      "expected": "Decision must be approve, reject or return.",
+      "actual": "Decision must be approve, reject or return.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_30",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Validation (UI)",
+      "scenario": "Reject without remarks (after confirming)",
+      "data": "J-3, Reject, remarks blank",
+      "expected": "confirmation asked=true | Remarks (5 to 200 characters) are required to reject or return a posting.",
+      "actual": "confirmation asked=true | Remarks (5 to 200 characters) are required to reject or return a posting.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_31",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI) / UC-2 A1",
+      "scenario": "Officer returns a posting with remarks",
+      "data": "J-3, Return, 'Please add the batch criterion.'",
+      "expected": "Job J-3 returned to the recruiter for changes. | pending: J-5",
+      "actual": "Job J-3 returned to the recruiter for changes. | pending: J-5",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_32",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI) / FR-1.5",
+      "scenario": "Recruiter edits and resubmits the returned posting",
+      "data": "J-3, Edit & resubmit, batch 2023-2027",
+      "expected": "Returned: Please add the batch criterion. | form: Data Analyst, 7.5 | Job J-3 resubmitted for approval (status: Pending).",
+      "actual": "Returned: Please add the batch criterion. | form: Data Analyst, 7.5 | Job J-3 resubmitted for approval (status: Pending).",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_33",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI) / FR-1.4",
+      "scenario": "Officer approves J-5; eligible students are notified",
+      "data": "J-5, Approve",
+      "expected": "Job J-5 published. 2 eligible student(s) notified.",
+      "actual": "Job J-5 published. 2 eligible student(s) notified.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_34",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Approved job reaches an eligible student",
+      "data": "Student 102 (IT, 7.40, 0 backlogs)",
+      "expected": "J-5: Eligible | notified about J-5=true",
+      "actual": "J-5: Eligible | notified about J-5=true",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_35",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI)",
+      "scenario": "Recruiter takes the application to Offer Issued",
+      "data": "Shortlist, Schedule interview, Mark selected, Issue offer letter",
+      "expected": "Application USPS-26-0001 is now Offer Issued. | status: Offer Issued",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelector')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_36",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / BR-01",
+      "scenario": "Student accepts the offer and becomes placed",
+      "data": "Accept offer on USPS-26-0001, confirm",
+      "expected": "Application USPS-26-0001 is now Accepted. | profile: Placed",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelectorAll')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_37",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Validation (UI) / BR-05",
+      "scenario": "Placed student applies to another job",
+      "data": "Student 101 (placed), J-5",
+      "expected": "You are already placed; the placement policy blocks further applications.",
+      "actual": "Select one of your active resumes.",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_38",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / FR-2.9",
+      "scenario": "Timeline after acceptance",
+      "data": "Timeline of USPS-26-0001",
+      "expected": "done: Applied, Under Review, Shortlisted, Interview Scheduled, Selected, Offer Issued | current: Accepted | 7 history entries",
+      "actual": "ERROR: Cannot read properties of undefined (reading 'querySelectorAll')",
+      "status": "FAIL"
+    },
+    {
+      "id": "TC_UI_39",
+      "module": "M1 Job Posting & Eligibility (UI)",
+      "technique": "Integration (UI) / FR-2.12",
+      "scenario": "Job posted by a recruiter elsewhere appears on the officer's open page",
+      "data": "Recruiter 2 posts 'IoT Support Engineer' from another browser",
+      "expected": "J-6 IoT Support Engineer appeared without reload | popup: New job posting J-6 (IoT Support Engineer) is waiting for approval.",
+      "actual": "J-6 IoT Support Engineer appeared without reload | popup: New job posting J-6 (IoT Support Engineer) is waiting for approval.",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_40",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Integration (UI) / FR-2.12",
+      "scenario": "Job approved elsewhere appears on the student's open job board",
+      "data": "Officer approves J-6 from another browser; student 103 (ECE) is eligible",
+      "expected": "J-6: Eligible appeared without reload",
+      "actual": "J-6: Eligible appeared without reload",
+      "status": "PASS"
+    },
+    {
+      "id": "TC_UI_41",
+      "module": "M2 Application & Tracking (UI)",
+      "technique": "Functional (UI) / NFR-18",
+      "scenario": "Page fits a phone screen",
+      "data": "Frame width 390 px",
+      "expected": "horizontal page scroll=false",
+      "actual": "horizontal page scroll=false",
+      "status": "PASS"
+    }
+  ]
+}

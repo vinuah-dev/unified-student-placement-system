@@ -1,0 +1,177 @@
+Issue Id,Parent,Issue Type,Summary,Description,Labels,Story point estimate,Sprint
+1,,Epic,Module 1: Job Posting and Eligibility Verification,"Recruiters post jobs with eligibility criteria, placement officers approve / reject / return them, students search published jobs and the system checks eligibility automatically with reasons (SRS 4.3-4.4, FR-09 to FR-14, UC-2; requirements FR-1.1 to FR-1.8).
+
+Priority: High",module-1 priority-high,,
+2,,Epic,Module 2: Job Application and Tracking,"Students apply with a resume, recruiters move applications through the Expt-5 statechart, students withdraw, accept or decline offers and track a timeline; notifications and live page updates (SRS 4.5, FR-15 to FR-17, UC-1; requirements FR-2.1 to FR-2.12).
+
+Priority: High",module-2 priority-high,,
+3,,Epic,Testing and Quality Assurance,"Test case design (Functional, Unit, Integration, BVA, EP, Validation), automation of unit, API, integration and Edge UI tests, test runs, defect logging and retesting.
+
+Priority: High",testing priority-high,,
+4,,Epic,Project Setup and Documentation,"Requirements from the SRS, project structure and database, report and presentation.
+
+Priority: High",docs priority-high,,
+5,4,Task,Derive the requirements of the two modules from the SRS,"FR-1.x and FR-2.x with exact messages in docs/requirements.md, from SRS 4.3-4.5, UC-1, UC-2, BR-01 to BR-08 and the Expt-3/4/5 diagrams.
+
+Priority: High",docs priority-high,2,USPS Sprint 1
+6,4,Task,Set up project structure and SQLite schema (SRS 6.1),"app/ (rules, db, server, static), tests/, docs/. Tables: students, companies, recruiters, placement_officers, resumes, jobs, applications, application_history, eligibility_checks, notifications. Python 3.11 standard library only.
+
+Priority: Medium",docs priority-medium,2,USPS Sprint 1
+7,1,Story,Recruiter posts a job with eligibility criteria,"As a recruiter of an approved company I want to post a job with package, deadline and eligibility criteria so that the placement cell can publish it.
+Acceptance: FR-1.1, FR-1.2, FR-1.3 (FR-09, FR-10, FR-13).
+
+Priority: Highest",module-1 priority-highest,5,USPS Sprint 1
+8,1,Story,"Placement officer approves, rejects or returns a posting","As a placement officer I want to approve, reject or return postings with remarks so that only checked jobs reach students.
+Acceptance: FR-1.4 (FR-11, BR-02).
+
+Priority: High",module-1 priority-high,3,USPS Sprint 1
+9,1,Story,Recruiter edits and resubmits a returned posting,"As a recruiter I want to fix a posting the officer returned and submit it again.
+Acceptance: FR-1.5 (UC-2 A1).
+
+Priority: Medium",module-1 priority-medium,2,USPS Sprint 1
+10,1,Story,Student searches and filters published jobs,"As a student I want to search jobs by keyword, location, package and eligibility.
+Acceptance: FR-1.6 (FR-12).
+
+Priority: High",module-1 priority-high,3,USPS Sprint 1
+11,1,Story,Automatic eligibility check with reasons,"As a student I want to see whether I am eligible for a job and which criteria I do not meet.
+Acceptance: FR-1.7, FR-1.8 (FR-14, BR-03).
+
+Priority: Highest",module-1 priority-highest,5,USPS Sprint 1
+12,2,Story,Student applies to a job with a resume and cover note,"As an eligible student I want to apply before the deadline and get a tracking id.
+Acceptance: FR-2.1 to FR-2.4 (FR-15, UC-1, BR-04, BR-05).
+
+Priority: Highest",module-2 priority-highest,5,USPS Sprint 2
+13,2,Story,Recruiter moves applications through the selection stages,"As a recruiter I want to review, shortlist, schedule, select and make offers to my own applicants.
+Acceptance: FR-2.5, FR-2.6 (Expt-5 statechart, BR-07, BR-08).
+
+Priority: High",module-2 priority-high,5,USPS Sprint 2
+14,2,Story,Student withdraws an application before the deadline,"As a student I want to withdraw an application I no longer want.
+Acceptance: FR-2.7 (FR-16).
+
+Priority: Medium",module-2 priority-medium,2,USPS Sprint 2
+15,2,Story,Student accepts or declines an offer,"As a student I want to respond to an offer; accepting marks me placed.
+Acceptance: FR-2.8 (BR-01, BR-05).
+
+Priority: High",module-2 priority-high,3,USPS Sprint 2
+16,2,Story,Application status timeline and notifications,"As a student I want a timeline of each application and notifications of every change.
+Acceptance: FR-2.9 to FR-2.11 (FR-17, FR-25).
+
+Priority: High",module-2 priority-high,3,USPS Sprint 2
+17,2,Story,Pages update live when another user changes data,"As any user I want my open page to show new jobs, approvals and status changes without reloading.
+Acceptance: FR-2.12.
+
+Priority: Medium",module-2 priority-medium,3,USPS Sprint 2
+18,3,Task,Design test cases in the PBL format,"155 test cases: TC ID, Module, Test Scenario, Test Data, Expected Result, Actual Result, Status; techniques Functional, Unit, Integration, BVA, EP, Validation.
+
+Priority: High",testing priority-high,3,USPS Sprint 3
+19,3,Task,Automate Module 1 unit and API tests,"tests/m1_cases.py - 61 cases (TC_M1_01 to TC_M1_61).
+
+Priority: High",testing priority-high,3,USPS Sprint 3
+20,3,Task,Automate Module 2 unit and API tests,"tests/m2_cases.py - 42 cases (TC_M2_01 to TC_M2_42).
+
+Priority: High",testing priority-high,3,USPS Sprint 3
+21,3,Task,Automate integration tests,"tests/integration_cases.py - 11 cases incl. rollback, concurrency, restart and live-update version.
+
+Priority: High",testing priority-high,2,USPS Sprint 3
+22,3,Task,Automate UI tests in Microsoft Edge,"tests/ui - 41 cases that fill the forms, press the buttons and read the page.
+
+Priority: Medium",testing priority-medium,3,USPS Sprint 3
+23,3,Task,Execute test run 1 and log defects,"python -m tests.run_tests run1: 151 cases, 136 passed, 15 failed -> BUG-01.
+
+Priority: High",testing priority-high,1,USPS Sprint 3
+24,3,Task,Retest after the BUG-01 fix (run 2),"python -m tests.run_tests run2: 151 cases, 151 passed.
+
+Priority: High",testing priority-high,1,USPS Sprint 3
+25,3,Task,"Exploratory testing, run 3 and retest run 4","Exploratory session found BUG-02, BUG-03, BUG-04; 4 new cases; run3 152/155 passed; after fixes run4 155/155 passed.
+
+Priority: High",testing priority-high,2,USPS Sprint 3
+26,4,Task,Prepare project report and presentation,"Report (DOCX/PDF) and PPT for the PBL evaluation.
+
+Priority: Medium",docs priority-medium,3,USPS Sprint 3
+27,7,Subtask,Implement validate_job_posting() and EligibilityCriteria,,,,
+28,7,Subtask,Build Post a job form,,,,
+29,7,Subtask,Unit tests TC_M1_01 to TC_M1_23,,,,
+30,8,Subtask,Implement decision API with remarks rules,,,,
+31,8,Subtask,Build officer approval screen,,,,
+32,9,Subtask,Implement PUT /api/jobs/<id> resubmission,,,,
+33,9,Subtask,Add Edit & resubmit to My job postings,,,,
+34,10,Subtask,Implement job board API with filters and pagination,,,,
+35,10,Subtask,Build job board and search form,,,,
+36,11,Subtask,Implement eligibility check with reasons and logging,,,,
+37,11,Subtask,Show eligibility badges and reasons,,,,
+38,12,Subtask,Implement apply API with ordered checks and rollback,,,,
+39,12,Subtask,Build apply form,,,,
+40,13,Subtask,Implement statechart transitions and authorisation,,,,
+41,13,Subtask,Build applicant list with next steps,,,,
+42,14,Subtask,Implement withdraw API,,,,
+43,15,Subtask,Implement offer response and placement lock,,,,
+44,16,Subtask,"Build My applications, timeline and notifications",,,,
+45,17,Subtask,Add /api/version and page polling with notification pop-up,,,,
+46,2,Bug,[BUG-01] Apply form does not pre-select the student's active resume,"UC-1 step 4 says the application form opens with the student's active resume pre-selected. The Resume list stays on '-- Select a resume --', so a student who confirms the form as shown gets 'Select one of your active resumes.' and no application is created. Cause: when the list is redrawn the page keeps the previous choice if it is still in the list, and the empty placeholder option always is, so the active resume was never chosen.
+
+Found by: Test execution run1: TC_UI_07 failed directly; TC_UI_11, 14, 15 and 37 failed with 'Select one of your active resumes.' and 10 later UI cases that depend on the application (TC_UI_12, 13, 17, 19-22, 35, 36, 38) could not run
+Severity: Major
+
+Steps to reproduce:
+1. Start the portal: python run.py and open http://127.0.0.1:8091/?role=student&id=101
+2. In 'Apply for a job' choose J-1 Software Engineer
+3. Look at the Resume field and press Submit application
+
+Expected: Resume shows Aarav_Resume_v2.pdf (the active one) and the application is submitted: 'Application submitted for J-1. Tracking id USPS-26-0001.' (FR-2.3, UC-1 step 4)
+Actual: Resume shows '-- Select a resume --'; Submit gives 'Select one of your active resumes.'
+
+Resolution: Fixed - fillApplyForm() keeps the previous resume only when one was actually chosen, otherwise it selects the student's active resume (app/static/app.js).
+Retest: TC_UI_07, TC_UI_11 and the 13 dependent UI cases PASS in run2 (151/151)
+
+Priority: High",bug severity-major priority-high,,USPS Sprint 3
+47,1,Bug,[BUG-02] Same job approval sent twice at once is applied twice and students are notified twice,"When two approval requests for the same pending posting arrive at the same moment, both pass the 'is it pending?' check before either saves the decision. Both get '200 published' and every eligible student receives the 'New job for you' notification twice. Cause: the decision reads the status and writes the new status without holding a lock.
+
+Found by: Exploratory testing after run2 (double click / two officers); reproduced by new case TC_INT_10 in run3 (4 of 10 trials failed)
+Severity: Major
+
+Steps to reproduce:
+1. Start the portal with the demo data
+2. Send 6 identical requests at the same time: POST /api/jobs/3/decision {decision: approve, actor_role: officer, actor_id: 1} (or double-click Record decision on a slow network)
+3. Count the 200 responses and the student notifications about J-3
+
+Expected: Exactly one request succeeds, the others get '409: This job is not pending approval (status: published).'; each eligible student is notified once (FR-1.4)
+Actual: Two requests return 200 and each eligible student is notified twice (4 of 10 trials)
+
+Resolution: Fixed - decide_job() and resubmit_job() run under the application lock (threading.RLock), so check-and-update is atomic (app/server.py).
+Retest: TC_INT_10 PASS in run4: double decisions in 0 of 10 trials
+
+Priority: High",bug severity-major priority-high,,USPS Sprint 3
+48,2,Bug,[BUG-03] Same application status change sent twice at once is recorded twice,"If a recruiter's 'Move to review' request is sent twice at the same moment, both requests read the state Applied and both apply the transition, so the timeline shows the Applied -> Under Review step twice and the student gets two notifications. The same race exists for withdraw and offer responses.
+
+Found by: Exploratory testing after run2 (9 of 15 manual trials); reproduced by new case TC_INT_11 in run3 (3 of 10 trials failed)
+Severity: Major
+
+Steps to reproduce:
+1. Student 101 applies to J-1 (USPS-26-0001)
+2. Send 8 identical requests at the same time: POST /api/applications/1/events {event: under_review, actor_role: recruiter, actor_id: 1}
+3. Open GET /api/applications/1 and count the history entries
+
+Expected: One request succeeds; the others get '409: Event 'under_review' is not allowed when the application is Under Review.'; history has 2 entries (submit, under_review) (FR-2.5)
+Actual: Two or more requests return 200 and the history contains duplicate Under Review entries
+
+Resolution: Fixed - withdraw() and event() run under the same application lock as apply(); the lock is re-entrant because event() calls withdraw() (app/server.py).
+Retest: TC_INT_11 PASS in run4: double status changes in 0 of 10 trials
+
+Priority: High",bug severity-major priority-high,,USPS Sprint 3
+49,1,Bug,[BUG-04] Officer can approve a posting whose deadline has already passed,"A posting that waited in the approval queue past its own deadline can still be approved. It is published as already Closed, and eligible students are told 'New job for you ... apply before <date in the past>', a job they can never apply to.
+
+Found by: Exploratory testing after run2; reproduced by new case TC_M1_60 in run3
+Severity: Minor
+
+Steps to reproduce:
+1. Leave J-3 (deadline 20-11-2026 10:00) pending until the deadline
+2. As Placement Officer choose J-3, Approve, Record decision
+3. Look at the response, the student board and the student notifications
+
+Expected: '409: The deadline of J-3 has passed; return the posting so the recruiter can change it.' and J-3 stays pending (FR-1.4)
+Actual: '200: Job J-3 published. 1 eligible student(s) notified.'; J-3 shows as Closed on the board
+
+Resolution: Fixed - decide_job() refuses 'approve' when the deadline is not in the future; reject and return are still allowed (TC_M1_61) (app/server.py). Requirement FR-1.4 updated.
+Retest: TC_M1_60 and TC_M1_61 PASS in run4
+
+Priority: Medium",bug severity-minor priority-medium,,USPS Sprint 3

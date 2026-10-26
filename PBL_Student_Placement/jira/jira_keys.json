@@ -1,0 +1,19 @@
+{
+  "site": "https://rbunagpur-team-zhx8jd75.atlassian.net",
+  "project": "USPS",
+  "board": 3,
+  "sprints": {"S1": 6, "S2": 7, "S3": 8},
+  "keys": {
+    "E1": "USPS-1", "E2": "USPS-2", "E3": "USPS-3", "E4": "USPS-4",
+    "T1": "USPS-5", "T2": "USPS-6",
+    "US1": "USPS-7", "US2": "USPS-8", "US3": "USPS-9", "US4": "USPS-10", "US5": "USPS-11",
+    "US6": "USPS-12", "US7": "USPS-13", "US8": "USPS-14", "US9": "USPS-15", "US10": "USPS-16", "US11": "USPS-17",
+    "T3": "USPS-18", "T4": "USPS-19", "T5": "USPS-20", "T6": "USPS-21", "T7": "USPS-22", "T8": "USPS-23",
+    "T9": "USPS-24", "T10": "USPS-25", "T11": "USPS-26",
+    "ST1": "USPS-27", "ST2": "USPS-28", "ST3": "USPS-29", "ST4": "USPS-30", "ST5": "USPS-31", "ST6": "USPS-32",
+    "ST7": "USPS-33", "ST8": "USPS-34", "ST9": "USPS-35", "ST10": "USPS-36", "ST11": "USPS-37", "ST12": "USPS-38",
+    "ST13": "USPS-39", "ST14": "USPS-40", "ST15": "USPS-41", "ST16": "USPS-42", "ST17": "USPS-43", "ST18": "USPS-44",
+    "ST19": "USPS-45",
+    "BUG-01": "USPS-46", "BUG-02": "USPS-47", "BUG-03": "USPS-48", "BUG-04": "USPS-49"
+  }
+}

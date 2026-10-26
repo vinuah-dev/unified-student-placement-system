@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Platform Suite" tests="32" skipped="0" failures="0" errors="0" time="0.249" hostname="Vineet-ASUS_TUF" timestamp="2026-10-26T12:48:40">
+<properties>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="\"/>
+<property name="java.class.path" value="lib\junit-platform-console-standalone-1.11.4.jar"/>
+<property name="java.class.version" value="65.0"/>
+<property name="java.home" value="C:\Users\vinee\.jdks\jdk-21.0.12.1+1"/>
+<property name="java.io.tmpdir" value="C:\Users\vinee\AppData\Local\Temp\"/>
+<property name="java.library.path" value="C:\Users\vinee\.jdks\jdk-21.0.12.1+1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI\;C:\Users\vinee\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\vinee\AppData\Local\Programs\Python\Python311\;C:\Users\vinee\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\vinee\AppData\Local\Programs\Python\Python313\;C:\Users\vinee\AppData\Local\Programs\Python\Launcher\;C:\Users\vinee\AppData\Local\Microsoft\WindowsApps;D:\codin\Microsoft VS Code\bin;C:\Users\vinee\AppData\Roaming\npm;D:\codin\Microsoft VS Code\bin\copilot-shim;C:\Users\vinee\AppData\Local\Programs\Python\Python313;C:\Users\vinee\AppData\Local\Programs\Python\Python311;C:\Program Files\nodejs;C:\Program Files\Git\mingw64\bin;C:\Program Files\GitHub CLI;."/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="21.0.12.1+1-LTS"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="21"/>
+<property name="java.vendor" value="Eclipse Adoptium"/>
+<property name="java.vendor.url" value="https://adoptium.net/"/>
+<property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+<property name="java.vendor.version" value="Temurin-21.0.12.1+1"/>
+<property name="java.version" value="21.0.12.1"/>
+<property name="java.version.date" value="2026-08-18"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="21"/>
+<property name="java.vm.vendor" value="Eclipse Adoptium"/>
+<property name="java.vm.version" value="21.0.12.1+1-LTS"/>
+<property name="jdk.debug" value="release"/>
+<property name="junit.docs.version" value="1.11.4"/>
+<property name="line.separator" value="&#13;&#10;"/>
+<property name="native.encoding" value="Cp1252"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Windows 11"/>
+<property name="os.version" value="10.0"/>
+<property name="path.separator" value=";"/>
+<property name="stderr.encoding" value="Cp1252"/>
+<property name="stdout.encoding" value="Cp1252"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="C:\Users\vinee\.jdks\jdk-21.0.12.1+1\bin"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.cpu.isalist" value="amd64"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="lib\junit-platform-console-standalone-1.11.4.jar execute --class-path out\classes;out\test-classes --select-class WhiteBoxTestSuite --details=tree --disable-banner --disable-ansi-colors --reports-dir reports\junit"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="Cp1252"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="sun.os.patch.level" value=""/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="D:\codin\SE project\Expt9_White_Box_Testing"/>
+<property name="user.home" value="C:\Users\vinee"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="vinee"/>
+<property name="user.script" value=""/>
+<property name="user.timezone" value="Asia/Calcutta"/>
+<property name="user.variant" value=""/>
+</properties>
+<testcase name="pathR5Duplicate()" classname="EligibilityCriteriaTest$ParseBranches" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:ParseBranches]/[method:pathR5Duplicate()]
+display-name: R5: 1-2-4-...-9-10-4-5-6-7-9-4-11-12  duplicate kept once
+]]></system-out>
+</testcase>
+<testcase name="path3SideCNotPositive()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path3SideCNotPositive()]
+display-name: P3: 1-2-3-4-17  side c <= 0
+]]></system-out>
+</testcase>
+<testcase name="pathA3CgpaBelow()" classname="EligibilityCriteriaTest$GetReasons" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA3CgpaBelow()]
+display-name: A3: 1-2-3-4-5-8-11-14  CGPA 6.80 below minimum 7.0
+]]></system-out>
+</testcase>
+<testcase name="branchesParsed()" classname="EligibilityCriteriaTest$Constructor" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:Constructor]/[method:branchesParsed()]
+display-name: Branches text is parsed and the id kept: id 7, ' it, cse ' gives IT, CSE
+]]></system-out>
+</testcase>
+<testcase name="path10IsoscelesAEqualsC()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path10IsoscelesAEqualsC()]
+display-name: P10: 1-2-3-5-6-7-9-13-14-15-17  a == c
+]]></system-out>
+</testcase>
+<testcase name="pathA4BranchAllowed()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA4BranchAllowed()]
+display-name: A4: 1-2-5-6-8-11-14  branch CSE allowed
+]]></system-out>
+</testcase>
+<testcase name="pathR2BlankSkipped()" classname="EligibilityCriteriaTest$ParseBranches" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:ParseBranches]/[method:pathR2BlankSkipped()]
+display-name: R2: 1-2-4-5-6-4-11-12  only a blank entry is skipped
+]]></system-out>
+</testcase>
+<testcase name="pathA5BranchNotAllowed()" classname="EligibilityCriteriaTest$GetReasons" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA5BranchNotAllowed()]
+display-name: A5: 1-2-5-6-7-8-11-14  branch ECE not allowed
+]]></system-out>
+</testcase>
+<testcase name="path8IsoscelesAEqualsB()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path8IsoscelesAEqualsB()]
+display-name: P8: 1-2-3-5-6-7-9-10-12-17  a == b, b != c
+]]></system-out>
+</testcase>
+<testcase name="eligible()" classname="EligibilityCriteriaTest$Evaluate" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:Evaluate]/[method:eligible()]
+display-name: Eligible student: Aarav for J-1 (CGPA >= 7.0, CSE/IT, 0 backlogs, 2023-2027)
+]]></system-out>
+</testcase>
+<testcase name="path1SideANotPositive()" classname="TriangleTest" time="0.036">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path1SideANotPositive()]
+display-name: P1: 1-4-17  side a <= 0
+]]></system-out>
+</testcase>
+<testcase name="allCriteriaFail()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:allCriteriaFail()]
+display-name: All four criteria fail together (job J-1 rules, student Rohan): reasons in order
+]]></system-out>
+</testcase>
+<testcase name="blankBatchIgnored()" classname="EligibilityCriteriaTest$Constructor" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:Constructor]/[method:blankBatchIgnored()]
+display-name: Blank batch '   ' means no batch criterion: Rohan (2022-2026) has no reason
+]]></system-out>
+</testcase>
+<testcase name="pathR1Null()" classname="EligibilityCriteriaTest$ParseBranches" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:ParseBranches]/[method:pathR1Null()]
+display-name: R1: 1-2-3-12  no branches given (null)
+]]></system-out>
+</testcase>
+<testcase name="path7Equilateral()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path7Equilateral()]
+display-name: P7: 1-2-3-5-6-7-9-10-11-17  a == b == c
+]]></system-out>
+</testcase>
+<testcase name="path4FirstInequalityFails()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path4FirstInequalityFails()]
+display-name: P4: 1-2-3-5-8-17  a + b <= c
+]]></system-out>
+</testcase>
+<testcase name="pathR4OneBranch()" classname="EligibilityCriteriaTest$ParseBranches" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:ParseBranches]/[method:pathR4OneBranch()]
+display-name: R4: 1-2-4-5-6-7-9-10-4-11-12  one valid branch added
+]]></system-out>
+</testcase>
+<testcase name="path11Scalene()" classname="TriangleTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path11Scalene()]
+display-name: P11: 1-2-3-5-6-7-9-13-14-16-17  all sides different
+]]></system-out>
+</testcase>
+<testcase name="pathA9BatchDiffers()" classname="EligibilityCriteriaTest$GetReasons" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA9BatchDiffers()]
+display-name: A9: 1-2-5-8-11-12-13-14  batch 2022-2026 does not match
+]]></system-out>
+</testcase>
+<testcase name="loopManyTimes()" classname="EligibilityCriteriaTest$ParseBranches" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:ParseBranches]/[method:loopManyTimes()]
+display-name: Loop many times: ' it , CSE,,ece ' gives IT, CSE, ECE
+]]></system-out>
+</testcase>
+<testcase name="path6ThirdInequalityFails()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path6ThirdInequalityFails()]
+display-name: P6: 1-2-3-5-6-7-8-17  a + c <= b
+]]></system-out>
+</testcase>
+<testcase name="pathA6BacklogsEqual()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA6BacklogsEqual()]
+display-name: A6: 1-2-5-8-9-11-14  1 backlog equals maximum 1
+]]></system-out>
+</testcase>
+<testcase name="pathA7BacklogsExceed()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA7BacklogsExceed()]
+display-name: A7: 1-2-5-8-9-10-11-14  1 backlog exceeds maximum 0
+]]></system-out>
+</testcase>
+<testcase name="pathA1NoCriteria()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA1NoCriteria()]
+display-name: A1: 1-2-5-8-11-14  no criterion set
+]]></system-out>
+</testcase>
+<testcase name="ineligible()" classname="EligibilityCriteriaTest$Evaluate" time="0.016">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:Evaluate]/[method:ineligible()]
+display-name: Ineligible student: Kabir for J-1
+]]></system-out>
+</testcase>
+<testcase name="pathR3UnknownBranch()" classname="EligibilityCriteriaTest$ParseBranches" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:ParseBranches]/[method:pathR3UnknownBranch()]
+display-name: R3: 1-2-4-5-6-7-8-12  unknown branch refused
+]]></system-out>
+</testcase>
+<testcase name="pathA8BatchMatches()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA8BatchMatches()]
+display-name: A8: 1-2-5-8-11-12-14  batch 2023-2027 matches
+]]></system-out>
+</testcase>
+<testcase name="path9IsoscelesBEqualsC()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path9IsoscelesBEqualsC()]
+display-name: P9: 1-2-3-5-6-7-9-13-15-17  b == c
+]]></system-out>
+</testcase>
+<testcase name="path2SideBNotPositive()" classname="TriangleTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path2SideBNotPositive()]
+display-name: P2: 1-2-4-17  side b <= 0
+]]></system-out>
+</testcase>
+<testcase name="path5SecondInequalityFails()" classname="TriangleTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:TriangleTest]/[method:path5SecondInequalityFails()]
+display-name: P5: 1-2-3-5-6-8-17  b + c <= a
+]]></system-out>
+</testcase>
+<testcase name="cgpaEqualsMinimum()" classname="EligibilityCriteriaTest$GetReasons" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:cgpaEqualsMinimum()]
+display-name: Boundary: CGPA exactly equal to the minimum (7.00 vs 7.0) is eligible
+]]></system-out>
+</testcase>
+<testcase name="pathA2CgpaMet()" classname="EligibilityCriteriaTest$GetReasons" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]/[suite:WhiteBoxTestSuite]/[engine:junit-jupiter]/[class:EligibilityCriteriaTest]/[nested-class:GetReasons]/[method:pathA2CgpaMet()]
+display-name: A2: 1-2-3-5-8-11-14  CGPA 8.60 meets minimum 7.0
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-platform-suite]
+display-name: JUnit Platform Suite
+]]></system-out>
+</testsuite>

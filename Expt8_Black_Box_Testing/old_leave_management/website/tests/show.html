@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test case evidence</title>
+<style>
+  html, body { margin: 0; height: 100%; font-family: "Segoe UI", Arial, sans-serif; }
+  #bar { height: 34px; padding: 0 14px; display: flex; align-items: center; gap: 18px; background: #26303f; color: #fff; font-size: 13px; }
+  #bar b.PASS { color: #7fe0a0; }
+  #bar b.FAIL { color: #ff9a9a; }
+  iframe { display: block; width: 100%; height: calc(100% - 34px); border: 0; }
+</style>
+</head>
+<body>
+<div id="bar">Loading…</div>
+<iframe id="frame" title="Page under test"></iframe>
+<script src="testcases.js"></script>
+<script src="harness.js"></script>
+<script>
+// Usage: show.html?tc=TC_AL_01 — executes one test case and leaves the page in its after-submit state.
+(async function () {
+  const id = new URLSearchParams(location.search).get("tc");
+  const tc = TEST_CASES.find(function (t) { return t.id === id; });
+  const bar = document.getElementById("bar");
+  if (!tc) { bar.textContent = "Unknown test case: " + id; return; }
+  const r = await executeCase(document.getElementById("frame"), tc);
+  const box = document.getElementById("frame").contentDocument.getElementById("result");
+  box.scrollIntoView({ block: "center" });
+  bar.innerHTML = "";
+  [["Test case", r.id], ["Form", r.form], ["Executed", new Date().toLocaleString("en-IN")], ["Status", r.status]].forEach(function (pair) {
+    const span = document.createElement("span");
+    span.textContent = pair[0] + ": ";
+    const b = document.createElement("b");
+    b.textContent = pair[1];
+    if (pair[0] === "Status") b.className = pair[1];
+    span.appendChild(b);
+    bar.appendChild(span);
+  });
+  document.title = "DONE";
+})();
+</script>
+</body>
+</html>
