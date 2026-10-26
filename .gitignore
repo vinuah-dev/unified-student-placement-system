@@ -1,2 +1,4 @@
-# Local demo databases: the servers recreate them with the demo data on start.
-*.db
+__pycache__/
+*.pyc
+# demo database, recreated with demo data on start
+data/
